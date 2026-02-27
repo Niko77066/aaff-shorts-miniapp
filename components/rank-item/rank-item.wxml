@@ -1,0 +1,27 @@
+<!-- Rank Item Component -->
+<view class="ri-wrap" bindtap="onTap">
+  <view class="ri-rank {{item.rank <= 3 ? 'ri-rank-top' : ''}}">
+    <text class="ri-rank-num">{{item.rank}}</text>
+  </view>
+  <view class="ri-cover-box">
+    <image class="ri-cover" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+  </view>
+  <view class="ri-body flex-1">
+    <text class="ri-title line-clamp-1">{{item.title}}</text>
+    <view class="ri-meta flex items-center">
+      <text class="ri-author">{{item.author}}</text>
+      <text class="ri-sep">·</text>
+      <text class="ri-plays">{{item.playCountText}}播放</text>
+    </view>
+    <view class="ri-tags flex" wx:if="{{item.tags.length > 0}}">
+      <text class="ri-tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="t" wx:if="{{index < 2}}">{{t}}</text>
+    </view>
+  </view>
+  <view class="ri-right flex flex-col items-end">
+    <text class="ri-score">{{item.score}}</text>
+    <view class="ri-trend {{item.trend > 0 ? 'up' : item.trend < 0 ? 'down' : ''}}">
+      <text class="ri-trend-arrow">{{item.trend > 0 ? '↑' : item.trend < 0 ? '↓' : '-'}}</text>
+      <text class="ri-trend-val">{{item.trendText}}</text>
+    </view>
+  </view>
+</view>

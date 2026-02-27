@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "rank-item": "/components/rank-item/rank-item"
+  },
+  "navigationBarTitleText": "完整榜单"
+}

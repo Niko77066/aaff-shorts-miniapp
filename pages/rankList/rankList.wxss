@@ -1,0 +1,106 @@
+/* ════════════════════════════════════════
+   Rank List Page — Dashboard Style
+   ════════════════════════════════════════ */
+
+.page-ranklist {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* Filter Bar */
+.filter-bar {
+  background: var(--color-surface);
+  padding: 16rpx 0;
+  box-shadow: var(--shadow-xs);
+}
+.filter-scroll { white-space: nowrap; }
+.filter-pills {
+  display: inline-flex;
+  padding: 0 24rpx;
+  gap: 14rpx;
+}
+.filter-pill {
+  display: inline-flex;
+  padding: 12rpx 28rpx;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-alt);
+  border: 2rpx solid transparent;
+  transition: all 0.3s;
+}
+.filter-pill.active {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+.filter-text {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+.filter-pill.active .filter-text {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Stats Bar */
+.stats-bar {
+  padding: 20rpx 28rpx;
+}
+.stats-text {
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+.sort-btn {
+  padding: 10rpx 24rpx;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-xs);
+  border: 2rpx solid var(--color-border);
+}
+.sort-text {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  margin-right: 8rpx;
+  font-weight: 500;
+}
+.sort-arrow {
+  font-size: var(--font-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* Scroll */
+.rank-scroll {
+  height: calc(100vh - 200rpx);
+  padding: 0 24rpx;
+}
+.rank-item-wrap {
+  opacity: 0;
+}
+
+/* Bottom */
+.list-bottom {
+  text-align: center;
+  padding: 48rpx 0;
+}
+.list-bottom-text {
+  font-size: var(--font-xs);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+.loading-dots {
+  gap: 16rpx;
+}
+.dot {
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.4;
+  animation: dotPulse 1.4s infinite ease-in-out;
+}
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes dotPulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
+  40% { transform: scale(1); opacity: 0.8; }
+}

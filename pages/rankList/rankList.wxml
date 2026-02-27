@@ -1,0 +1,57 @@
+<!-- Rank List Page - Full Ranking View -->
+<view class="page-ranklist">
+  <!-- Filter Bar -->
+  <view class="filter-bar flex items-center">
+    <scroll-view class="filter-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="filter-pills flex">
+        <view
+          wx:for="{{filters}}"
+          wx:key="id"
+          class="filter-pill {{activeFilter === index ? 'active' : ''}}"
+          bindtap="switchFilter"
+          data-index="{{index}}"
+        >
+          <text class="filter-text">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- Statistics Bar -->
+  <view class="stats-bar flex items-center justify-between">
+    <text class="stats-text">共 {{totalCount}} 部作品</text>
+    <view class="sort-btn flex items-center" bindtap="toggleSort">
+      <text class="sort-text">{{sortLabel}}</text>
+      <text class="sort-arrow">↕</text>
+    </view>
+  </view>
+
+  <!-- Ranking List -->
+  <scroll-view
+    class="rank-scroll"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    bindscrolltolower="onLoadMore"
+  >
+    <view
+      class="rank-item-wrap animate-in"
+      style="animation-delay: {{index * 0.04}}s;"
+      wx:for="{{items}}"
+      wx:key="id"
+    >
+      <rank-item item="{{item}}" bind:tap="onItemTap"></rank-item>
+    </view>
+
+    <view class="list-bottom">
+      <text class="list-bottom-text" wx:if="{{!hasMore}}">— 已加载全部 —</text>
+      <view class="loading-dots flex justify-center" wx:else>
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+    </view>
+
+    <view style="height: 60rpx;"></view>
+  </scroll-view>
+</view>

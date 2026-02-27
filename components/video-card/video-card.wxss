@@ -1,0 +1,88 @@
+/* Video Card Component — Dashboard Style */
+.video-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 2rpx solid var(--color-border);
+}
+.card-cover {
+  width: 100%;
+  height: 220rpx;
+}
+.cover-img { width: 100%; height: 100%; }
+.cover-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 14rpx;
+}
+.duration-badge {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10rpx);
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 14rpx;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+.play-badge {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10rpx);
+  color: #fff;
+  font-size: 20rpx;
+  padding: 4rpx 14rpx;
+  border-radius: var(--radius-full);
+}
+.play-tri { font-size: 16rpx; margin-right: 6rpx; }
+.play-num { font-size: 20rpx; font-weight: 600; }
+.rank-badge {
+  position: absolute;
+  top: 14rpx;
+  left: 14rpx;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rank-badge.rank-1 { background: linear-gradient(135deg, #FFB020, #FF8C00); box-shadow: 0 4rpx 12rpx rgba(255,176,32,0.3); }
+.rank-badge.rank-2 { background: linear-gradient(135deg, #A0A3BD, #7B7F9E); }
+.rank-badge.rank-3 { background: linear-gradient(135deg, #CD7F32, #B8711E); }
+.rank-text {
+  color: #fff;
+  font-size: var(--font-sm);
+  font-weight: 900;
+}
+.card-body { padding: 18rpx; }
+.card-title {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 14rpx;
+  min-height: 56rpx;
+  line-height: 1.4;
+}
+.card-footer { margin-top: 4rpx; }
+.card-avatar {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  background: var(--color-surface-alt);
+  border: 2rpx solid var(--color-border);
+}
+.card-author {
+  font-size: var(--font-xs);
+  color: var(--color-text-tertiary);
+  max-width: 150rpx;
+  font-weight: 500;
+}
+.card-score {
+  font-size: 26rpx;
+  font-weight: 900;
+  color: var(--color-accent);
+}

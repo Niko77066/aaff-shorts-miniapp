@@ -1,0 +1,140 @@
+<!-- Detail Page - Video/Drama Detail View -->
+<view class="page-detail">
+  <!-- Video Player Area -->
+  <view class="player-area">
+    <image class="player-cover" src="{{info.cover}}" mode="aspectFill"></image>
+    <view class="player-overlay flex items-center justify-center">
+      <view class="play-btn-large">
+        <text class="play-btn-icon">▶</text>
+      </view>
+    </view>
+    <view class="player-duration">{{info.duration}}</view>
+  </view>
+
+  <!-- Info Section -->
+  <view class="detail-content">
+    <!-- Title & Score -->
+    <view class="detail-header">
+      <view class="flex items-start justify-between">
+        <text class="detail-title flex-1">{{info.title}}</text>
+        <view class="score-box flex flex-col items-center">
+          <text class="score-big">{{info.score}}</text>
+          <text class="score-label">评分</text>
+        </view>
+      </view>
+      <view class="detail-tags flex flex-wrap">
+        <text class="detail-tag" wx:for="{{info.tags}}" wx:key="*this">{{item}}</text>
+        <text class="detail-tag tool-tag">{{info.aiTool}}</text>
+      </view>
+    </view>
+
+    <!-- Stats Row -->
+    <view class="stats-row flex items-center justify-between">
+      <view class="stat-item flex flex-col items-center">
+        <text class="stat-num">{{info.playCountText}}</text>
+        <text class="stat-label">播放</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item flex flex-col items-center">
+        <text class="stat-num">{{info.likeCount}}</text>
+        <text class="stat-label">点赞</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item flex flex-col items-center">
+        <text class="stat-num">{{info.commentCount}}</text>
+        <text class="stat-label">评论</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item flex flex-col items-center">
+        <text class="stat-num">{{info.shareCount}}</text>
+        <text class="stat-label">分享</text>
+      </view>
+    </view>
+
+    <!-- Author Section -->
+    <view class="author-section flex items-center" bindtap="goToAuthor">
+      <image class="author-avatar-lg" src="{{info.authorAvatar}}" mode="aspectFill"></image>
+      <view class="author-info flex-1">
+        <text class="author-name-lg">{{info.author}}</text>
+        <text class="author-desc">{{info.authorDesc}}</text>
+      </view>
+      <view class="follow-btn">
+        <text class="follow-text">+ 关注</text>
+      </view>
+    </view>
+
+    <!-- Description -->
+    <view class="desc-section">
+      <text class="desc-title">作品简介</text>
+      <text class="desc-content">{{info.description}}</text>
+    </view>
+
+    <!-- AI Tool Info -->
+    <view class="tool-section card">
+      <view class="tool-header flex items-center">
+        <view class="tool-icon-box">
+          <text class="tool-icon-text">AI</text>
+        </view>
+        <view class="flex flex-col">
+          <text class="tool-name">AI工具: {{info.aiTool}}</text>
+          <text class="tool-model">模型: {{info.aiModel}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Ranking Info -->
+    <view class="ranking-badge-section flex items-center" wx:if="{{info.rankPosition}}">
+      <view class="ranking-medal">
+        <text class="medal-emoji">🏆</text>
+      </view>
+      <view class="flex flex-col flex-1">
+        <text class="ranking-position">当前排名 #{{info.rankPosition}}</text>
+        <text class="ranking-list-name">{{info.rankListName}}</text>
+      </view>
+      <text class="ranking-arrow">›</text>
+    </view>
+
+    <!-- Related Works -->
+    <view class="related-section">
+      <view class="section-header flex items-center justify-between">
+        <text class="section-title">相关推荐</text>
+      </view>
+      <scroll-view class="related-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+        <view class="related-list flex">
+          <view
+            class="related-item"
+            wx:for="{{relatedItems}}"
+            wx:key="id"
+            bindtap="goToRelated"
+            data-id="{{item.id}}"
+          >
+            <view class="related-cover-wrap">
+              <image class="related-cover" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+            </view>
+            <text class="related-title line-clamp-2">{{item.title}}</text>
+            <text class="related-score">{{item.score}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- Bottom Action Bar -->
+  <view class="action-bar flex items-center">
+    <view class="action-btn flex flex-col items-center" bindtap="onLike">
+      <text class="action-icon">♡</text>
+      <text class="action-label">点赞</text>
+    </view>
+    <view class="action-btn flex flex-col items-center" bindtap="onComment">
+      <text class="action-icon">💬</text>
+      <text class="action-label">评论</text>
+    </view>
+    <view class="action-btn flex flex-col items-center" bindtap="onShare">
+      <text class="action-icon">↗</text>
+      <text class="action-label">分享</text>
+    </view>
+    <view class="action-btn-primary flex items-center justify-center flex-1" bindtap="onPlay">
+      <text class="action-primary-text">▶  立即播放</text>
+    </view>
+  </view>
+</view>

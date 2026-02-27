@@ -1,0 +1,100 @@
+/* Rank Item Component — Dashboard Style */
+.ri-wrap {
+  display: flex;
+  align-items: center;
+  padding: 22rpx 20rpx;
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  margin-bottom: 14rpx;
+  box-shadow: var(--shadow-sm);
+  border: 2rpx solid var(--color-border);
+}
+.ri-rank {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 14rpx;
+  background: var(--color-surface-alt);
+}
+.ri-rank-num {
+  font-size: var(--font-md);
+  font-weight: 800;
+  color: var(--color-text-tertiary);
+}
+.ri-rank-top { background: linear-gradient(135deg, #FFB020, #FF8C00); box-shadow: 0 4rpx 12rpx rgba(255,176,32,0.3); }
+.ri-rank-top .ri-rank-num { color: #FFFFFF; }
+.ri-cover-box {
+  width: 112rpx;
+  height: 76rpx;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 18rpx;
+}
+.ri-cover { width: 100%; height: 100%; }
+.ri-body { min-width: 0; }
+.ri-title {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 6rpx;
+  line-height: 1.4;
+}
+.ri-meta { margin-bottom: 8rpx; }
+.ri-author, .ri-plays {
+  font-size: var(--font-xs);
+  color: var(--color-text-tertiary);
+  font-weight: 500;
+}
+.ri-sep {
+  font-size: var(--font-xs);
+  color: var(--color-text-tertiary);
+  margin: 0 8rpx;
+}
+.ri-tags { gap: 8rpx; }
+.ri-tag {
+  font-size: 20rpx;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 3rpx 14rpx;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+}
+.ri-right {
+  flex-shrink: 0;
+  margin-left: 16rpx;
+}
+.ri-score {
+  font-size: var(--font-lg);
+  font-weight: 900;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+.ri-trend {
+  display: flex;
+  align-items: center;
+  margin-top: 8rpx;
+  padding: 3rpx 12rpx;
+  border-radius: var(--radius-full);
+}
+.ri-trend.up { background: var(--color-success-light); }
+.ri-trend.up .ri-trend-arrow,
+.ri-trend.up .ri-trend-val { color: var(--color-success); }
+.ri-trend.down { background: var(--color-secondary-light); }
+.ri-trend.down .ri-trend-arrow,
+.ri-trend.down .ri-trend-val { color: var(--color-danger); }
+.ri-trend-arrow {
+  font-size: 20rpx;
+  margin-right: 4rpx;
+  color: var(--color-text-tertiary);
+  font-weight: 600;
+}
+.ri-trend-val {
+  font-size: 20rpx;
+  color: var(--color-text-tertiary);
+  font-weight: 600;
+}

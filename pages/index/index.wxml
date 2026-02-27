@@ -1,0 +1,243 @@
+<!--
+  AAFF AI Video Rankings - Index Page
+  Modern dashboard style: generous spacing, soft cards, layered depth
+-->
+<view class="page">
+  <!-- Custom Navigation Bar -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-bar-inner">
+      <view class="nav-left flex items-center">
+        <view class="logo-box">
+          <text class="logo-letter">A</text>
+        </view>
+        <view class="flex flex-col">
+          <text class="nav-brand">AAFF</text>
+          <text class="nav-sub">AI视频榜单</text>
+        </view>
+      </view>
+      <view class="nav-right flex items-center">
+        <view class="icon-btn" bindtap="onSearchTap">
+          <image class="icon-img" src="/images/icon-search.svg" mode="aspectFit"></image>
+          <text class="icon-btn-text">🔍</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- Spacer -->
+  <view style="height: {{navHeight}}px;"></view>
+
+  <!-- Main Tabs: AI短片 / AI短剧 -->
+  <view class="main-tabs-wrap">
+    <view class="main-tabs-bar">
+      <view
+        class="main-tab-item {{activeMainTab === 0 ? 'active' : ''}}"
+        bindtap="switchMainTab"
+        data-index="0"
+      >
+        <text class="main-tab-label">AI 短片</text>
+      </view>
+      <view
+        class="main-tab-item {{activeMainTab === 1 ? 'active' : ''}}"
+        bindtap="switchMainTab"
+        data-index="1"
+      >
+        <text class="main-tab-label">AI 短剧</text>
+      </view>
+      <!-- Sliding indicator -->
+      <view class="tab-slider" style="transform: translateX({{activeMainTab * 100}}%);"></view>
+    </view>
+  </view>
+
+  <!-- Sub Tabs: 周榜 / 月榜 / 年榜 -->
+  <view class="sub-tabs-area">
+    <scroll-view scroll-x enhanced show-scrollbar="{{false}}" class="sub-scroll">
+      <view class="sub-pills">
+        <view
+          wx:for="{{subTabs}}"
+          wx:key="id"
+          class="pill {{activeSubTab === index ? 'pill-active' : ''}}"
+          bindtap="switchSubTab"
+          data-index="{{index}}"
+        >
+          <text class="pill-icon">{{item.icon}}</text>
+          <text class="pill-label">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- Scrollable Content -->
+  <scroll-view
+    class="main-scroll"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    refresher-enabled
+    bindrefresherrefresh="onRefresh"
+    refresher-triggered="{{refreshing}}"
+    bindscrolltolower="onLoadMore"
+  >
+    <!-- ═══ Section: Champion Card ═══ -->
+    <view class="section" wx:if="{{topItems.length > 0}}">
+      <view class="section-head flex items-center justify-between">
+        <view class="flex items-center">
+          <view class="section-icon-box">
+            <text class="section-icon">🏆</text>
+          </view>
+          <text class="section-title">热门榜单</text>
+          <view class="period-chip">
+            <text class="period-text">{{periodText}}</text>
+          </view>
+        </view>
+        <view class="more-btn" bindtap="goToRankList">
+          <text class="more-text">全部</text>
+          <text class="more-arrow">→</text>
+        </view>
+      </view>
+
+      <!-- #1 Champion -->
+      <view class="champion-card" bindtap="goToDetail" data-id="{{topItems[0].id}}">
+        <view class="champion-cover">
+          <image class="champion-img" src="{{topItems[0].cover}}" mode="aspectFill" lazy-load></image>
+          <view class="champion-gradient"></view>
+          <!-- Crown badge -->
+          <view class="crown-badge">
+            <text class="crown-num">1</text>
+          </view>
+          <!-- Bottom info overlay -->
+          <view class="champion-bottom">
+            <view class="champion-stats flex items-center">
+              <view class="stat-chip">
+                <text class="stat-chip-text">▶ {{topItems[0].playCountText}}</text>
+              </view>
+              <view class="stat-chip">
+                <text class="stat-chip-text">{{topItems[0].duration}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="champion-body">
+          <text class="champion-title line-clamp-1">{{topItems[0].title}}</text>
+          <view class="champion-row flex items-center justify-between">
+            <view class="flex items-center">
+              <image class="avatar-sm" src="{{topItems[0].authorAvatar}}" mode="aspectFill"></image>
+              <text class="author-text">{{topItems[0].author}}</text>
+            </view>
+            <view class="score-pill">
+              <text class="score-pill-text">{{topItems[0].score}}</text>
+            </view>
+          </view>
+          <view class="tag-row flex flex-wrap">
+            <view class="tag-chip" wx:for="{{topItems[0].tags}}" wx:key="*this" wx:for-item="tag">
+              <text class="tag-chip-text">{{tag}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- #2 & #3 Side by Side -->
+      <view class="runner-row flex" wx:if="{{topItems.length > 2}}">
+        <view
+          class="runner-card"
+          wx:for="{{topItems}}"
+          wx:key="id"
+          wx:if="{{index > 0 && index < 3}}"
+          bindtap="goToDetail"
+          data-id="{{item.id}}"
+        >
+          <view class="runner-cover">
+            <image class="runner-img" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+            <view class="runner-badge runner-badge-{{index + 1}}">
+              <text class="runner-badge-num">{{index + 1}}</text>
+            </view>
+            <view class="runner-duration">
+              <text class="runner-dur-text">{{item.duration}}</text>
+            </view>
+          </view>
+          <view class="runner-body">
+            <text class="runner-title line-clamp-2">{{item.title}}</text>
+            <view class="runner-foot flex items-center justify-between">
+              <text class="runner-author line-clamp-1">{{item.author}}</text>
+              <text class="runner-score">{{item.score}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- ═══ Section: Full Ranking ═══ -->
+    <view class="section">
+      <view class="section-head flex items-center justify-between">
+        <view class="flex items-center">
+          <view class="section-icon-box icon-box-blue">
+            <text class="section-icon">📊</text>
+          </view>
+          <text class="section-title">完整排名</text>
+        </view>
+        <text class="update-hint">更新于 {{updateTime}}</text>
+      </view>
+
+      <view class="rank-list-card">
+        <view
+          class="rank-row animate-in"
+          style="animation-delay: {{index * 0.04}}s;"
+          wx:for="{{rankItems}}"
+          wx:key="id"
+          bindtap="goToDetail"
+          data-id="{{item.id}}"
+        >
+          <!-- Rank Number -->
+          <view class="rank-num-box {{item.rank <= 3 ? 'rank-top-' + item.rank : ''}}">
+            <text class="rank-num-text">{{item.rank}}</text>
+          </view>
+
+          <!-- Cover -->
+          <view class="rank-thumb">
+            <image class="rank-thumb-img" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+          </view>
+
+          <!-- Info -->
+          <view class="rank-detail flex-1">
+            <text class="rank-detail-title line-clamp-1">{{item.title}}</text>
+            <view class="rank-detail-meta flex items-center">
+              <text class="meta-author">{{item.author}}</text>
+              <view class="meta-dot"></view>
+              <text class="meta-plays">{{item.playCountText}}播放</text>
+            </view>
+            <view class="rank-detail-tags flex">
+              <view class="micro-tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag" wx:if="{{index < 2}}">
+                <text class="micro-tag-text">{{tag}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- Score & Trend -->
+          <view class="rank-end flex flex-col items-end">
+            <text class="rank-end-score">{{item.score}}</text>
+            <view class="trend-chip {{item.trend > 0 ? 'trend-up' : item.trend < 0 ? 'trend-down' : 'trend-flat'}}">
+              <text class="trend-chip-text">{{item.trend > 0 ? '↑' : item.trend < 0 ? '↓' : '·'}} {{item.trendText}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- Load More -->
+      <view class="load-more-area" wx:if="{{hasMore}}">
+        <view class="pulse-dots flex justify-center items-center">
+          <view class="pulse-dot"></view>
+          <view class="pulse-dot"></view>
+          <view class="pulse-dot"></view>
+        </view>
+      </view>
+      <view class="end-line" wx:else>
+        <view class="end-divider"></view>
+        <text class="end-text">已经到底了</text>
+        <view class="end-divider"></view>
+      </view>
+    </view>
+
+    <!-- Safe area -->
+    <view style="height: 140rpx;"></view>
+  </scroll-view>
+</view>

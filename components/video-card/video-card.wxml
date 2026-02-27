@@ -1,0 +1,26 @@
+<!-- Video Card Component -->
+<view class="video-card" bindtap="onTap">
+  <view class="card-cover relative overflow-hidden">
+    <image class="cover-img" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+    <view class="cover-overlay">
+      <view class="duration-badge" wx:if="{{item.duration}}">{{item.duration}}</view>
+      <view class="play-badge flex items-center" wx:if="{{item.playCountText}}">
+        <text class="play-tri">▶</text>
+        <text class="play-num">{{item.playCountText}}</text>
+      </view>
+    </view>
+    <view class="rank-badge rank-{{item.rank}}" wx:if="{{item.rank && item.rank <= 3}}">
+      <text class="rank-text">{{item.rank}}</text>
+    </view>
+  </view>
+  <view class="card-body">
+    <text class="card-title line-clamp-2">{{item.title}}</text>
+    <view class="card-footer flex items-center justify-between">
+      <view class="flex items-center">
+        <image class="card-avatar" src="{{item.authorAvatar}}" mode="aspectFill" wx:if="{{item.authorAvatar}}"></image>
+        <text class="card-author line-clamp-1">{{item.author}}</text>
+      </view>
+      <text class="card-score" wx:if="{{item.score}}">{{item.score}}</text>
+    </view>
+  </view>
+</view>
