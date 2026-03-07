@@ -22,10 +22,10 @@
       <!-- Right: Search + Bell -->
       <view class="nav-right flex items-center">
         <view class="nav-icon-btn" bindtap="">
-          <text class="nav-icon-text">⌕</text>
+          <text class="nav-icon-text" style="letter-spacing:0;">⌕</text>
         </view>
         <view class="nav-icon-btn" bindtap="">
-          <text class="nav-icon-text">⋯</text>
+          <text class="nav-icon-text" style="letter-spacing:0;">⋯</text>
         </view>
       </view>
     </view>
@@ -95,7 +95,8 @@
       <view class="podium-item podium-item-2 flex flex-col items-center">
         <view class="podium-avatar-area relative flex flex-col items-center">
           <view class="podium-avatar-ring podium-ring-silver">
-            <view class="podium-avatar-inner">
+            <image wx:if="{{podiumItems[1].cover}}" class="podium-avatar-img" src="{{podiumItems[1].cover}}" mode="aspectFill" />
+            <view wx:else class="podium-avatar-inner">
               <text class="podium-avatar-letter">{{podiumItems[1].author[0]}}</text>
             </view>
           </view>
@@ -115,7 +116,8 @@
         <view class="podium-avatar-area relative flex flex-col items-center">
           <text class="podium-crown-text">★</text>
           <view class="podium-avatar-ring podium-ring-gold">
-            <view class="podium-avatar-inner">
+            <image wx:if="{{podiumItems[0].cover}}" class="podium-avatar-img" src="{{podiumItems[0].cover}}" mode="aspectFill" />
+            <view wx:else class="podium-avatar-inner">
               <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
             </view>
           </view>
@@ -134,7 +136,8 @@
       <view class="podium-item podium-item-3 flex flex-col items-center">
         <view class="podium-avatar-area relative flex flex-col items-center">
           <view class="podium-avatar-ring podium-ring-bronze">
-            <view class="podium-avatar-inner">
+            <image wx:if="{{podiumItems[2].cover}}" class="podium-avatar-img" src="{{podiumItems[2].cover}}" mode="aspectFill" />
+            <view wx:else class="podium-avatar-inner">
               <text class="podium-avatar-letter">{{podiumItems[2].author[0]}}</text>
             </view>
           </view>

@@ -1056,3 +1056,10 @@
   font-size: 36rpx;
   line-height: 1;
 }
+
+/* Podium avatar as cover thumbnail */
+.podium-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}

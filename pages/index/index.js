@@ -138,7 +138,8 @@ Page({
         rank: i + 1,
         title: item.original_title || item.title,
         author: item.author,
-        score: item.views ? formatViews(item.views) : '-'
+        score: item.views ? formatViews(item.views) : '-',
+        cover: item.cover || ''
       }
     })
 

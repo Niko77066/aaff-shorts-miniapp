@@ -5,7 +5,7 @@
     <view class="player-cover-gradient" style="background: {{info.coverGradient}};"></view>
     <view class="player-overlay flex items-center justify-center">
       <view class="play-btn-large">
-        <text class="play-btn-text">▶</text>
+        <text class="play-btn-text" style="margin-right:4rpx;">▶</text>
       </view>
     </view>
     <view class="player-duration">{{info.duration}}</view>
@@ -87,13 +87,13 @@
     <!-- Ranking Info -->
     <view class="ranking-badge-section flex items-center" wx:if="{{info.rankPosition}}">
       <view class="ranking-medal">
-        <text class="medal-text">★</text>
+        <text class="medal-text" style="margin-right:8rpx;">★</text>
       </view>
       <view class="flex flex-col flex-1">
         <text class="ranking-position">当前排名 #{{info.rankPosition}}</text>
         <text class="ranking-list-name">{{info.rankListName}}</text>
       </view>
-      <text class="ranking-arrow-text">›</text>
+      <text class="ranking-arrow-text" style="margin-left:8rpx;">›</text>
     </view>
 
     <!-- Related Works -->
@@ -124,20 +124,20 @@
   <!-- Bottom Action Bar -->
   <view class="action-bar flex items-center">
     <view class="action-btn flex flex-col items-center" bindtap="onLike">
-      <text class="action-text">♡</text>
+      <text class="action-text" style="margin-right:8rpx;">♡</text>
       <text class="action-label">点赞</text>
     </view>
     <view class="action-btn flex flex-col items-center" bindtap="onComment">
-      <text class="action-text">↗</text>
+      <text class="action-text" style="margin-right:8rpx;">↗</text>
       <text class="action-label">评论</text>
     </view>
     <view class="action-btn flex flex-col items-center" bindtap="onShare">
-      <text class="action-text">↓</text>
+      <text class="action-text" style="margin-right:8rpx;">↓</text>
       <text class="action-label">分享</text>
     </view>
     <view class="action-btn-primary flex items-center justify-center flex-1" bindtap="onPlay">
-      <text class="action-primary-text">▶</text>
-      <text class="action-primary-text">立即播放</text>
+      <text class="action-primary-text" style="margin-right:8rpx;">▶</text>
+      <text class="action-primary-text" style="margin-right:8rpx;">立即播放</text>
     </view>
   </view>
 </view>
