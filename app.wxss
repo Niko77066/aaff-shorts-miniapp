@@ -1,58 +1,58 @@
 /**
  * AAFF AI Video Rankings - Global Styles
- * Design System: Dark Cyberpunk — glass morphism, gradient orbs, deep purple-black
+ * Design System: Clean Minimal Dark — editorial, professional typography
  */
 
 page {
   /* ─── Color System (Dark Theme) ─── */
   --color-bg: #0a0510;
-  --color-surface: #242426;
-  --color-surface-elevated: #2a2a2e;
-  --color-surface-alt: rgba(255, 255, 255, 0.05);
-  --color-surface-hover: rgba(255, 255, 255, 0.08);
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.12);
+  --color-surface: #1a1a1e;
+  --color-surface-elevated: #242428;
+  --color-surface-alt: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.06);
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.10);
 
   /* Text */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #a1a1aa;
-  --color-text-tertiary: #71717a;
+  --color-text-tertiary: #52525b;
   --color-text-inverse: #0a0510;
 
   /* Accent */
   --color-accent: #60a5fa;
   --color-accent-dark: #3b82f6;
-  --color-accent-light: rgba(96, 165, 250, 0.12);
+  --color-accent-light: rgba(96, 165, 250, 0.10);
   --color-accent-gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
 
   /* Secondary accent — orange */
   --color-secondary: #f97316;
-  --color-secondary-light: rgba(249, 115, 22, 0.1);
+  --color-secondary-light: rgba(249, 115, 22, 0.08);
 
   /* Status */
   --color-gold: #fbbf24;
   --color-gold-gradient: linear-gradient(180deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
-  --color-gold-light: rgba(251, 191, 36, 0.1);
+  --color-gold-light: rgba(251, 191, 36, 0.08);
   --color-silver: #a1a1aa;
   --color-silver-gradient: linear-gradient(180deg, #F4F4F5 0%, #A1A1AA 50%, #71717A 100%);
   --color-bronze: #ea580c;
   --color-bronze-gradient: linear-gradient(180deg, #FDBA74 0%, #EA580C 50%, #9A3412 100%);
   --color-success: #34d399;
-  --color-success-light: rgba(52, 211, 153, 0.1);
+  --color-success-light: rgba(52, 211, 153, 0.08);
   --color-warning: #fbbf24;
   --color-danger: #f43f5e;
-  --color-danger-light: rgba(244, 63, 94, 0.1);
+  --color-danger-light: rgba(244, 63, 94, 0.08);
 
-  --color-tag-bg: rgba(255, 255, 255, 0.08);
+  --color-tag-bg: rgba(255, 255, 255, 0.06);
 
-  /* ─── Shadows (dark theme — deeper, more dramatic) ─── */
+  /* ─── Shadows (dark theme) ─── */
   --shadow-xs: 0 1rpx 3rpx rgba(0, 0, 0, 0.3);
-  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.4), 0 1rpx 2rpx rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.5), 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.6), 0 2rpx 8rpx rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.7), 0 4rpx 12rpx rgba(0, 0, 0, 0.4);
-  --shadow-accent: 0 8rpx 24rpx rgba(96, 165, 250, 0.15);
-  --shadow-gold: 0 4rpx 16rpx rgba(251, 191, 36, 0.3);
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 8rpx 24rpx rgba(96, 165, 250, 0.12);
+  --shadow-gold: 0 4rpx 16rpx rgba(251, 191, 36, 0.2);
 
   /* ─── Radius ─── */
   --radius-xs: 8rpx;
@@ -133,32 +133,26 @@ view, text, image, scroll-view, swiper {
   -webkit-box-orient: vertical;
 }
 
-/* ─── Glass Morphism ─── */
+/* ─── Glass Panel (used sparingly) ─── */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-.glass-panel-strong {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* ─── Card System (Dark) ─── */
 .card {
   background: var(--color-surface);
   border-radius: var(--radius-xl);
-  border: 2rpx solid var(--color-border);
+  border: 1px solid var(--color-border);
   overflow: hidden;
 }
 .card-elevated {
   background: var(--color-surface);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
-  border: 2rpx solid var(--color-border);
+  border: 1px solid var(--color-border);
   overflow: hidden;
 }
 
@@ -204,17 +198,9 @@ view, text, image, scroll-view, swiper {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
-@keyframes springUp {
-  0% { opacity: 0; transform: translateY(60rpx) scale(0.9); }
-  60% { transform: translateY(-8rpx) scale(1.02); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
 .animate-in {
   animation: fadeInUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 .animate-scale {
   animation: scaleIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-.animate-spring {
-  animation: springUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }

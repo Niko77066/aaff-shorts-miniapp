@@ -18,6 +18,23 @@ var GRADIENT_COLORS = [
   ['#c2410c', '#fdba74']
 ]
 
+/* Featured content for hero banners */
+var featuredFilm = {
+  title: 'Neon Genesis: AI',
+  author: 'VisualMinds',
+  badge: '\uD83C\uDFC6 本周最佳短片',
+  description: '探索赛博朋克世界的视觉极限，AI生成艺术的巅峰之作，每一帧都充满着对未来科技的极致想象。',
+  gradient: 'linear-gradient(135deg, #1e1b4b, #4c1d95, #831843)'
+}
+
+var featuredDrama = {
+  title: 'Quantum Paradox',
+  author: 'StoryGen',
+  badge: '\uD83D\uDD25 热门连载短剧',
+  description: '当时间旅行遇到量子力学，每一集都在颠覆你的认知。跟随主角在平行宇宙中寻找失落的真相。',
+  gradient: 'linear-gradient(135deg, #1e3a5f, #0c4a6e, #164e63)'
+}
+
 function getApprovalColor(value) {
   if (value >= 95) return '#f43f5e'
   if (value >= 90) return '#f59e0b'
@@ -29,12 +46,12 @@ Page({
     statusBarHeight: 0,
     navHeight: 0,
     activeMainTab: 0,
-    topItems: [],
+    featured: null,
+    podiumItems: [],
     rankItems: [],
     refreshing: false,
     hasMore: true,
-    page: 1,
-    avatarLetter: 'U'
+    page: 1
   },
 
   onLoad() {
@@ -52,7 +69,7 @@ Page({
 
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({ selected: 0 })
+      this.getTabBar().setData({ selected: 1 })
     }
   },
 
@@ -117,20 +134,21 @@ Page({
 
     var currentData = isShorts ? shortFilms : shortDramas
 
-    /* Build top 3 for podium */
-    var topItems = currentData.slice(0, 3).map(function(item, i) {
-      var colors = GRADIENT_COLORS[item.gradientIdx % GRADIENT_COLORS.length]
+    /* Featured hero banner */
+    var featured = isShorts ? featuredFilm : featuredDrama
+
+    /* Build podium items (top 3) */
+    var podiumItems = currentData.slice(0, 3).map(function(item, i) {
       return {
         id: item.id,
+        rank: i + 1,
+        title: item.title,
         author: item.author,
-        score: item.score,
-        initial: item.author.charAt(0),
-        gradientFrom: colors[0],
-        gradientTo: colors[1]
+        score: item.score
       }
     })
 
-    /* Build all items for leaderboard cards */
+    /* Build ALL items for leaderboard cards (rank 1-7) */
     var rankItems = currentData.map(function(item, i) {
       var colors = GRADIENT_COLORS[item.gradientIdx % GRADIENT_COLORS.length]
       return {
@@ -146,10 +164,14 @@ Page({
         gradientTo: colors[1],
         tags: item.tags,
         description: item.description,
-        badgeClass: i === 0 ? 'badge-gold' : (i === 1 ? 'badge-silver' : (i === 2 ? 'badge-bronze' : ''))
+        badgeClass: (i + 1) === 1 ? 'badge-gold' : ((i + 1) === 2 ? 'badge-silver' : ((i + 1) === 3 ? 'badge-bronze' : ''))
       }
     })
 
-    this.setData({ topItems: topItems, rankItems: rankItems })
+    this.setData({
+      featured: featured,
+      podiumItems: podiumItems,
+      rankItems: rankItems
+    })
   }
 })

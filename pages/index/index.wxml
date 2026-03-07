@@ -1,66 +1,59 @@
 <!--
   AAFF AI Video Rankings - Index Page
-  Dark Cyberpunk Theme with Podium + Leaderboard Cards
+  Reference Design: AI Studio (floating pill nav, hero banner, podium)
 -->
 <view class="page">
-  <!-- Background Gradient Orbs -->
-  <view class="bg-container">
-    <view class="bg-orb orb-purple"></view>
-    <view class="bg-orb orb-rose"></view>
-    <view class="bg-orb orb-amber"></view>
-    <view class="bg-orb orb-blue"></view>
+  <!-- Background gradient orbs -->
+  <view class="bg-gradient">
+    <view class="bg-orb bg-orb-purple"></view>
+    <view class="bg-orb bg-orb-rose"></view>
+    <view class="bg-orb bg-orb-amber"></view>
+    <view class="bg-orb bg-orb-blue"></view>
   </view>
 
-  <!-- Custom Navigation Bar -->
+  <!-- Header (sticky) -->
   <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
-    <view class="nav-fade"></view>
+    <view class="nav-bar-fade"></view>
     <view class="nav-bar-inner">
+      <!-- Left: Logo + Brand -->
       <view class="nav-left flex items-center">
-        <view class="logo-box">
-          <text class="logo-letter">A</text>
-        </view>
-        <view class="flex flex-col">
-          <view class="nav-title-row flex items-center">
-            <text class="nav-brand text-gradient">AAFF 排行榜</text>
-            <text class="sparkle-icon">✨</text>
-          </view>
-          <text class="nav-sub">AI Video Leaderboard</text>
-        </view>
+        <view class="nav-logo-mark">A</view>
+        <text class="nav-brand">AAFF</text>
       </view>
-      <view class="avatar-btn">
-        <view class="avatar-placeholder">
-          <text class="avatar-letter">{{avatarLetter}}</text>
+      <!-- Right: Search + Bell -->
+      <view class="nav-right flex items-center">
+        <view class="nav-icon-btn" bindtap="">
+          <text class="nav-icon-emoji">\uD83D\uDD0D</text>
+        </view>
+        <view class="nav-icon-btn" bindtap="">
+          <text class="nav-icon-emoji">\uD83D\uDD14</text>
         </view>
       </view>
     </view>
 
-    <!-- Segmented Control -->
-    <view class="seg-wrap">
-      <view class="seg-bar glass-panel">
-        <view
-          class="seg-indicator"
-          style="transform: translateX({{activeMainTab * 100}}%);"
-        ></view>
-        <view
-          class="seg-item"
-          bindtap="switchMainTab"
-          data-index="0"
-        >
-          <text class="seg-label {{activeMainTab === 0 ? 'seg-active' : ''}}">AI 短片</text>
-        </view>
-        <view
-          class="seg-item"
-          bindtap="switchMainTab"
-          data-index="1"
-        >
-          <text class="seg-label {{activeMainTab === 1 ? 'seg-active' : ''}}">AI 短剧</text>
-        </view>
+    <!-- Pill Tabs -->
+    <view class="tab-pills flex">
+      <view
+        class="tab-pill {{activeMainTab === 0 ? 'tab-pill-active' : 'tab-pill-inactive'}}"
+        bindtap="switchMainTab"
+        data-index="0"
+      >
+        <text class="tab-pill-icon">\uD83C\uDFAC</text>
+        <text class="tab-pill-label">AI 短片</text>
+      </view>
+      <view
+        class="tab-pill {{activeMainTab === 1 ? 'tab-pill-active' : 'tab-pill-inactive'}}"
+        bindtap="switchMainTab"
+        data-index="1"
+      >
+        <text class="tab-pill-icon">\uD83C\uDFAD</text>
+        <text class="tab-pill-label">AI 短剧</text>
       </view>
     </view>
   </view>
 
   <!-- Spacer for fixed nav -->
-  <view style="height: {{navHeight + 100}}px;"></view>
+  <view style="height: {{navHeight + 120}}px;"></view>
 
   <!-- Scrollable Content -->
   <scroll-view
@@ -73,70 +66,89 @@
     refresher-triggered="{{refreshing}}"
     bindscrolltolower="onLoadMore"
   >
-    <!-- Podium Section -->
-    <view class="podium-section" wx:if="{{topItems.length >= 3}}">
-      <view class="podium flex items-end justify-center">
-        <!-- Rank 2 (Left) -->
-        <view class="podium-col animate-spring" style="animation-delay: 0.1s;">
-          <view class="podium-avatar-wrap">
-            <view class="podium-ring ring-silver">
-              <view class="podium-avatar-circle" style="background: linear-gradient(135deg, {{topItems[1].gradientFrom}}, {{topItems[1].gradientTo}});">
-                <text class="podium-initial">{{topItems[1].initial}}</text>
-              </view>
-            </view>
-            <view class="podium-name-bubble glass-panel">
-              <text class="podium-name">{{topItems[1].author}}</text>
-            </view>
-            <text class="podium-score score-silver">{{topItems[1].score}}分</text>
+    <!-- Hero Banner -->
+    <view class="hero-banner-section" wx:if="{{featured}}">
+      <view class="hero-banner">
+        <view class="hero-banner-bg" style="background: {{featured.gradient}};"></view>
+        <view class="hero-banner-overlay-top"></view>
+        <view class="hero-banner-overlay-bottom"></view>
+        <view class="hero-banner-content">
+          <view class="hero-banner-badge">
+            <text class="hero-banner-badge-text">{{featured.badge}}</text>
           </view>
-          <view class="pillar pillar-silver">
-            <view class="pillar-shine"></view>
-            <text class="pillar-num">2</text>
-          </view>
-        </view>
-
-        <!-- Rank 1 (Center, Tall) -->
-        <view class="podium-col podium-first animate-spring" style="animation-delay: 0s;">
-          <view class="podium-avatar-wrap">
-            <text class="crown-emoji">👑</text>
-            <view class="podium-ring ring-gold">
-              <view class="podium-avatar-circle" style="background: linear-gradient(135deg, {{topItems[0].gradientFrom}}, {{topItems[0].gradientTo}});">
-                <text class="podium-initial">{{topItems[0].initial}}</text>
-              </view>
-            </view>
-            <view class="podium-name-bubble glass-panel">
-              <text class="podium-name">{{topItems[0].author}}</text>
-            </view>
-            <text class="podium-score score-gold">{{topItems[0].score}}分</text>
-          </view>
-          <view class="pillar pillar-gold">
-            <view class="pillar-shine"></view>
-            <text class="pillar-num">1</text>
-          </view>
-        </view>
-
-        <!-- Rank 3 (Right) -->
-        <view class="podium-col animate-spring" style="animation-delay: 0.2s;">
-          <view class="podium-avatar-wrap">
-            <view class="podium-ring ring-bronze">
-              <view class="podium-avatar-circle" style="background: linear-gradient(135deg, {{topItems[2].gradientFrom}}, {{topItems[2].gradientTo}});">
-                <text class="podium-initial">{{topItems[2].initial}}</text>
-              </view>
-            </view>
-            <view class="podium-name-bubble glass-panel">
-              <text class="podium-name">{{topItems[2].author}}</text>
-            </view>
-            <text class="podium-score score-bronze">{{topItems[2].score}}分</text>
-          </view>
-          <view class="pillar pillar-bronze">
-            <view class="pillar-shine"></view>
-            <text class="pillar-num">3</text>
+          <text class="hero-banner-title">{{featured.title}}</text>
+          <text class="hero-banner-author">作者: {{featured.author}}</text>
+          <text class="hero-banner-desc line-clamp-2">{{featured.description}}</text>
+          <view class="hero-banner-btn">
+            <text class="hero-banner-btn-icon">▶</text>
+            <text class="hero-banner-btn-text">立即观看</text>
           </view>
         </view>
       </view>
     </view>
 
-    <!-- Leaderboard Cards -->
+    <!-- Section Title -->
+    <view class="section-title flex items-center justify-between">
+      <text class="section-title-text">本周排行榜</text>
+      <text class="section-title-badge">TOP 10</text>
+    </view>
+
+    <!-- Podium (Top 3) -->
+    <view class="podium flex items-end justify-center" wx:if="{{podiumItems.length >= 3}}">
+      <!-- Rank 2 -->
+      <view class="podium-item podium-item-2 flex flex-col items-center">
+        <view class="podium-avatar-ring podium-ring-silver">
+          <view class="podium-avatar-inner">
+            <text class="podium-avatar-letter">{{podiumItems[1].author[0]}}</text>
+          </view>
+        </view>
+        <view class="podium-name-bubble">
+          <text class="podium-name">{{podiumItems[1].author}}</text>
+        </view>
+        <text class="podium-score podium-score-silver">{{podiumItems[1].score}}分</text>
+        <view class="podium-pillar pillar-silver">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">2</text>
+        </view>
+      </view>
+
+      <!-- Rank 1 -->
+      <view class="podium-item podium-item-1 flex flex-col items-center">
+        <text class="podium-crown">\uD83D\uDC51</text>
+        <view class="podium-avatar-ring podium-ring-gold">
+          <view class="podium-avatar-inner">
+            <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
+          </view>
+        </view>
+        <view class="podium-name-bubble">
+          <text class="podium-name">{{podiumItems[0].author}}</text>
+        </view>
+        <text class="podium-score podium-score-gold">{{podiumItems[0].score}}分</text>
+        <view class="podium-pillar pillar-gold">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">1</text>
+        </view>
+      </view>
+
+      <!-- Rank 3 -->
+      <view class="podium-item podium-item-3 flex flex-col items-center">
+        <view class="podium-avatar-ring podium-ring-bronze">
+          <view class="podium-avatar-inner">
+            <text class="podium-avatar-letter">{{podiumItems[2].author[0]}}</text>
+          </view>
+        </view>
+        <view class="podium-name-bubble">
+          <text class="podium-name">{{podiumItems[2].author}}</text>
+        </view>
+        <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}分</text>
+        <view class="podium-pillar pillar-bronze">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">3</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- Leaderboard Cards (all ranks) -->
     <view class="cards-section">
       <view
         class="lb-card animate-in"
@@ -167,7 +179,7 @@
 
             <view class="lb-title-area flex-1">
               <text class="lb-title line-clamp-1">{{item.title}}</text>
-              <text class="lb-author">作者: {{item.author}}</text>
+              <text class="lb-author">{{item.author}}</text>
             </view>
           </view>
 
@@ -183,7 +195,7 @@
 
             <view class="stats-info flex flex-col">
               <view class="stat-line flex items-center">
-                <text class="stat-icon-fire">🔥</text>
+                <text class="stat-icon-fire">\uD83D\uDD25</text>
                 <text class="stat-text-light">评分 {{item.score}}</text>
               </view>
               <view class="stat-line flex items-center">
@@ -194,7 +206,7 @@
 
             <!-- Tags -->
             <view class="lb-tags flex">
-              <text class="lb-tag glass-panel" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
+              <text class="lb-tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
             </view>
           </view>
 
@@ -222,7 +234,7 @@
       <view class="end-divider"></view>
     </view>
 
-    <!-- Safe area -->
-    <view style="height: 200rpx;"></view>
+    <!-- Safe area for floating nav -->
+    <view style="height: 240rpx;"></view>
   </scroll-view>
 </view>

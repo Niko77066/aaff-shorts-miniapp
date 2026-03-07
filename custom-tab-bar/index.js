@@ -1,16 +1,24 @@
 Component({
   data: {
-    selected: 0,
+    selected: 1,
     list: [
       {
         pagePath: "/pages/index/index",
+        text: "发现",
+        icon: "\uD83E\uDDED",
+        activeIcon: "\uD83E\uDDED"
+      },
+      {
+        pagePath: "/pages/index/index",
         text: "榜单",
-        iconType: "chart"
+        icon: "\uD83C\uDFC6",
+        activeIcon: "\uD83C\uDFC6"
       },
       {
         pagePath: "/pages/profile/profile",
         text: "我的",
-        iconType: "user"
+        icon: "\uD83D\uDC64",
+        activeIcon: "\uD83D\uDC64"
       }
     ]
   },

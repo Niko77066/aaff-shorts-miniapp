@@ -1,26 +1,14 @@
-<view class="tab-bar">
-  <view
-    wx:for="{{list}}"
-    wx:key="pagePath"
-    class="tab-item {{selected === index ? 'active' : ''}}"
-    bindtap="switchTab"
-    data-index="{{index}}"
-  >
-    <!-- Chart Icon (榜单) -->
-    <view class="tab-icon-wrap" wx:if="{{item.iconType === 'chart'}}">
-      <view class="icon-svg {{selected === index ? 'icon-active' : ''}}">
-        <view class="chart-bar bar-1"></view>
-        <view class="chart-bar bar-2"></view>
-        <view class="chart-bar bar-3"></view>
-      </view>
+<view class="tab-bar-wrap">
+  <view class="tab-bar-pill">
+    <view
+      wx:for="{{list}}"
+      wx:key="pagePath"
+      class="tab-pill-item {{selected === index ? 'tab-pill-item-active' : ''}}"
+      bindtap="switchTab"
+      data-index="{{index}}"
+    >
+      <text class="tab-pill-item-icon {{selected === index ? 'tab-pill-item-icon-active' : ''}}">{{selected === index ? item.activeIcon : item.icon}}</text>
+      <text class="tab-pill-item-label {{selected === index ? 'tab-pill-item-label-active' : ''}}">{{item.text}}</text>
     </view>
-    <!-- User Icon (我的) -->
-    <view class="tab-icon-wrap" wx:if="{{item.iconType === 'user'}}">
-      <view class="icon-svg {{selected === index ? 'icon-active' : ''}}">
-        <view class="user-head"></view>
-        <view class="user-body"></view>
-      </view>
-    </view>
-    <text class="tab-label {{selected === index ? 'label-active' : ''}}">{{item.text}}</text>
   </view>
 </view>
