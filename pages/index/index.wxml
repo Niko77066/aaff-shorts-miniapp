@@ -36,7 +36,7 @@
   </view>
 
   <!-- Spacer for fixed nav -->
-  <view style="height: {{navHeight + 48}}px;"></view>
+  <view style="height: {{navHeight + 36}}px;"></view>
 
   <!-- Scrollable Content -->
   <scroll-view
