@@ -46,7 +46,7 @@
   </view>
 
   <!-- Spacer for fixed nav -->
-  <view style="height: {{navHeight + 100}}px;"></view>
+  <view style="height: {{navHeight + 120}}px;"></view>
 
   <!-- Scrollable Content -->
   <scroll-view
@@ -59,13 +59,94 @@
     refresher-triggered="{{refreshing}}"
     bindscrolltolower="onLoadMore"
   >
-    <!-- Content -->
+    <!-- Main content: flex-1 px-4 pt-2 → flex flex-col gap-4 -->
     <view class="content-wrapper">
+    <!-- Hero Banner -->
+    <view class="hero-banner-section" wx:if="{{featured}}">
+      <view class="hero-banner">
+        <view class="hero-banner-bg" style="background: {{featured.gradient}};"></view>
+        <view class="hero-banner-overlay-top"></view>
+        <view class="hero-banner-overlay-bottom"></view>
+        <view class="hero-banner-content">
+          <view class="hero-banner-badge">
+            <text class="hero-banner-badge-text">{{featured.badge}}</text>
+          </view>
+          <text class="hero-banner-title">{{featured.title}}</text>
+          <text class="hero-banner-author">作者: {{featured.author}}</text>
+          <text class="hero-banner-desc line-clamp-2">{{featured.description}}</text>
+          <view class="hero-banner-btn">
+            <text class="icon hero-banner-btn-icon">\ue13f</text>
+            <text class="hero-banner-btn-text">立即观看</text>
+          </view>
+        </view>
+      </view>
+    </view>
 
     <!-- Section Title -->
     <view class="section-title flex items-center justify-between">
       <text class="section-title-text">{{tabs[activeMainTab]}} 排行榜</text>
       <text class="section-title-badge">TOP {{rankItems.length}}</text>
+    </view>
+
+    <!-- Podium (Top 3) -->
+    <view class="podium flex items-end justify-center" wx:if="{{podiumItems.length >= 3}}">
+      <!-- Rank 2 -->
+      <view class="podium-item podium-item-2 flex flex-col items-center">
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <view class="podium-avatar-ring podium-ring-silver">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[1].author[0]}}</text>
+            </view>
+          </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[1].author}}</text>
+          </view>
+          <text class="podium-score podium-score-silver">{{podiumItems[1].score}}分</text>
+        </view>
+        <view class="podium-pillar pillar-silver">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">2</text>
+        </view>
+      </view>
+
+      <!-- Rank 1 -->
+      <view class="podium-item podium-item-1 flex flex-col items-center">
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <text class="icon podium-crown-icon">\ue1d5</text>
+          <view class="podium-avatar-ring podium-ring-gold">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
+            </view>
+          </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[0].author}}</text>
+          </view>
+          <text class="podium-score podium-score-gold">{{podiumItems[0].score}}分</text>
+        </view>
+        <view class="podium-pillar pillar-gold">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">1</text>
+        </view>
+      </view>
+
+      <!-- Rank 3 -->
+      <view class="podium-item podium-item-3 flex flex-col items-center">
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <view class="podium-avatar-ring podium-ring-bronze">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[2].author[0]}}</text>
+            </view>
+          </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[2].author}}</text>
+          </view>
+          <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}分</text>
+        </view>
+        <view class="podium-pillar pillar-bronze">
+          <view class="pillar-shine"></view>
+          <text class="pillar-rank">3</text>
+        </view>
+      </view>
     </view>
 
     <!-- Immersive Cover Cards -->
