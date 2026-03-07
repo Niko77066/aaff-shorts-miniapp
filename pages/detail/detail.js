@@ -1,4 +1,4 @@
-const rankings = require('../../data/rankings.json')
+const rankings = require('../../data/rankings.js')
 
 /* Color palette for related items */
 var RELATED_GRADIENTS = [

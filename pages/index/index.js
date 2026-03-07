@@ -1,5 +1,5 @@
 const app = getApp()
-const rankings = require('../../data/rankings.json')
+const rankings = require('../../data/rankings.js')
 
 /* Color palette for CSS gradient backgrounds (no external images) */
 var GRADIENT_COLORS = [
