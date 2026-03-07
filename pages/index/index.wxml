@@ -149,76 +149,46 @@
       </view>
     </view>
 
-    <!-- Leaderboard Cards (all ranks) -->
+    <!-- Immersive Cover Cards -->
     <view class="cards-section">
       <view
-        class="lb-card animate-in"
-        style="animation-delay: {{index * 0.06}}s;"
+        class="cover-card animate-in"
+        style="animation-delay: {{index * 0.05}}s;"
         wx:for="{{rankItems}}"
         wx:key="id"
         bindtap="goToDetail"
         data-id="{{item.id}}"
       >
-        <!-- Background Gradient (CSS only, no images) -->
-        <view class="lb-card-bg">
-          <view class="lb-card-bg-gradient" style="background: linear-gradient(135deg, {{item.gradientFrom}}, {{item.gradientTo}});"></view>
-          <view class="lb-card-bg-fade"></view>
+        <!-- Cover Image -->
+        <image wx:if="{{item.cover}}" class="cover-card-img" src="{{item.cover}}" mode="aspectFill" />
+        <view wx:else class="cover-card-placeholder"></view>
+
+        <!-- Bottom gradient overlay -->
+        <view class="cover-card-overlay"></view>
+
+        <!-- Rank badge — top left -->
+        <view class="cover-rank {{item.rank <= 1 ? 'cover-rank-1' : (item.rank <= 2 ? 'cover-rank-2' : (item.rank <= 3 ? 'cover-rank-3' : 'cover-rank-n'))}}">
+          <text class="cover-rank-num">{{item.rankStr}}</text>
         </view>
 
-        <!-- Cover Image -->
-        <image wx:if="{{item.cover}}" class="lb-card-cover" src="{{item.cover}}" mode="aspectFill" />
+        <!-- Duration — top right -->
+        <view wx:if="{{item.score}}" class="cover-dur">
+          <text class="cover-dur-text">{{item.score}}</text>
+        </view>
 
-        <!-- Card Content -->
-        <view class="lb-card-content">
-          <!-- Header: Rank Badge + Title -->
-          <view class="lb-header flex items-start">
-            <!-- Rank Badge -->
-            <view wx:if="{{item.rank <= 3}}" class="rank-badge-pennant {{item.badgeClass}}">
-              <text class="pennant-top">TOP</text>
-              <text class="pennant-num">{{item.rank}}</text>
-            </view>
-            <view wx:else class="rank-badge-simple">
-              <text class="rank-badge-simple-num">{{item.rank}}</text>
-            </view>
+        <!-- Play button — bottom right -->
+        <view class="cover-play">
+          <view class="cover-play-tri"></view>
+        </view>
 
-            <view class="lb-title-area flex-1">
-              <text class="lb-title line-clamp-1">{{item.title}}</text>
-              <text class="lb-author">{{item.author}}</text>
-            </view>
-          </view>
-
-          <!-- Stats Row -->
-          <view class="lb-stats flex items-center">
-            <!-- Approval Badge -->
-            <view class="progress-wrap flex items-center">
-              <view class="approval-badge" style="border-color: {{item.approvalColor}};">
-                <text class="approval-num" style="color: {{item.approvalColor}};">{{item.approval}}</text>
-              </view>
-              <text class="progress-label">好评率</text>
-            </view>
-
-            <view class="stats-info flex flex-col">
-              <view class="stat-line flex items-center">
-                <text class="icon stat-icon-fire">\ue0d7</text>
-                <text class="stat-text-light">评分 {{item.score}}</text>
-              </view>
-              <view class="stat-line flex items-center">
-                <text class="icon stat-icon-play">\ue085</text>
-                <text class="stat-text-dim">播放 {{item.views}}</text>
-              </view>
-            </view>
-
-            <!-- Tags -->
-            <view class="lb-tags flex">
-              <text class="lb-tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
-            </view>
-          </view>
-
-          <!-- Description Quote -->
-          <view class="lb-quote" wx:if="{{item.description}}">
-            <text class="quote-mark quote-open">"</text>
-            <text class="quote-text line-clamp-2">{{item.description}}</text>
-            <text class="quote-mark quote-close">"</text>
+        <!-- Title + Author — bottom left -->
+        <view class="cover-text">
+          <text class="cover-title">{{item.title}}</text>
+          <view class="cover-meta">
+            <text class="cover-author">{{item.author}}</text>
+            <view wx:if="{{item.views && item.views != '-'}}" class="cover-dot"></view>
+            <text wx:if="{{item.views && item.views != '-'}}" class="cover-views">{{item.views}} 播放</text>
+            <text wx:if="{{item.platform}}" class="cover-plat">{{item.platform}}</text>
           </view>
         </view>
       </view>

@@ -149,19 +149,14 @@ Page({
       return {
         id: item.slug,
         rank: i + 1,
+        rankStr: String(i + 1).length < 2 ? '0' + (i + 1) : String(i + 1),
         title: item.original_title || item.title,
         author: item.author,
         score: item.duration ? formatDuration(item.duration) : '',
-        approval: approval,
-        approvalColor: getApprovalColor(approval),
         views: item.views ? formatViews(item.views) : '-',
         description: item.description || '',
-        tags: genTags(item),
-        platform: item.platform || '',
-        cover: item.cover || '',
-        gradientFrom: colors[0],
-        gradientTo: colors[1],
-        badgeClass: (i + 1) === 1 ? 'badge-gold' : ((i + 1) === 2 ? 'badge-silver' : ((i + 1) === 3 ? 'badge-bronze' : ''))
+        platform: item.platform === 'youtube' ? 'YouTube' : (item.platform === 'bilibili' ? 'B站' : (item.platform || '')),
+        cover: item.cover || ''
       }
     })
 

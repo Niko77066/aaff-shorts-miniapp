@@ -873,3 +873,149 @@
 .hero-banner {
   animation: scaleIn 0.5s ease-out forwards;
 }
+
+/* ==========================================
+   Immersive Cover Cards
+   ========================================== */
+.cover-card {
+  margin: 0 32rpx 28rpx;
+  border-radius: 36rpx;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% - 64rpx);
+  aspect-ratio: 16 / 9;
+  background: #1E252E;
+}
+
+.cover-card-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cover-card-placeholder {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1E252E, #262D37);
+}
+
+.cover-card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65%;
+  background: linear-gradient(to top, rgba(10,15,20,0.92) 0%, rgba(10,15,20,0.5) 50%, transparent 100%);
+  z-index: 1;
+}
+
+/* Rank badge — top left */
+.cover-rank {
+  position: absolute;
+  top: 20rpx; left: 24rpx;
+  z-index: 3;
+  min-width: 56rpx;
+  height: 56rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8rpx;
+}
+.cover-rank-1 { background: #FFB800; }
+.cover-rank-2 { background: #8B949E; }
+.cover-rank-3 { background: #D29922; }
+.cover-rank-n { background: rgba(240,246,252,0.1); }
+.cover-rank-num {
+  font-size: 28rpx;
+  font-weight: 900;
+  line-height: 1;
+}
+.cover-rank-1 .cover-rank-num { color: #0A0F14; }
+.cover-rank-2 .cover-rank-num { color: #0A0F14; }
+.cover-rank-3 .cover-rank-num { color: #0A0F14; }
+.cover-rank-n .cover-rank-num { color: #8B949E; }
+
+/* Duration — top right */
+.cover-dur {
+  position: absolute;
+  top: 20rpx; right: 24rpx;
+  z-index: 3;
+  background: rgba(10,15,20,0.6);
+  backdrop-filter: blur(8rpx);
+  padding: 6rpx 16rpx;
+  border-radius: 12rpx;
+}
+.cover-dur-text {
+  font-size: 22rpx;
+  color: rgba(240,246,252,0.85);
+  font-weight: 500;
+}
+
+/* Play button — bottom right */
+.cover-play {
+  position: absolute;
+  bottom: 28rpx; right: 28rpx;
+  z-index: 3;
+  width: 72rpx; height: 72rpx;
+  border-radius: 50%;
+  background: rgba(0,168,150,0.85);
+  backdrop-filter: blur(8rpx);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 24rpx rgba(0,168,150,0.4);
+}
+.cover-play-tri {
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 14rpx 0 14rpx 22rpx;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 4rpx;
+}
+
+/* Title + Author — bottom left */
+.cover-text {
+  position: absolute;
+  bottom: 28rpx; left: 28rpx;
+  right: 120rpx;
+  z-index: 2;
+}
+.cover-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #F0F6FC;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.cover-meta {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  margin-top: 6rpx;
+}
+.cover-author {
+  font-size: 22rpx;
+  color: rgba(240,246,252,0.7);
+}
+.cover-dot {
+  width: 6rpx; height: 6rpx;
+  border-radius: 50%;
+  background: rgba(240,246,252,0.3);
+}
+.cover-views {
+  font-size: 22rpx;
+  color: rgba(240,246,252,0.45);
+}
+.cover-plat {
+  font-size: 20rpx;
+  padding: 2rpx 10rpx;
+  border-radius: 6rpx;
+  background: rgba(0,168,150,0.2);
+  color: #00C9B0;
+  font-weight: 600;
+}
