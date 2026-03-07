@@ -4,7 +4,7 @@
 
 .page {
   min-height: 100vh;
-  background: #0a0510;
+  background: #0A0F14;
   position: relative;
   overflow: hidden;
   padding-bottom: 96rpx; /* pb-24 → 96rpx */
@@ -17,7 +17,7 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  background: #0a0510;
+  background: #0A0F14;
 }
 .bg-orb {
   position: absolute;
@@ -28,7 +28,7 @@
   left: -20%;
   width: 70%;
   height: 50%;
-  background: rgba(88, 28, 135, 0.4); /* purple-900/40 */
+  background: rgba(0, 168, 150, 0.25); /* emerald/40 */
   filter: blur(120px);
   -webkit-filter: blur(120px);
 }
@@ -37,7 +37,7 @@
   right: -20%;
   width: 60%;
   height: 60%;
-  background: rgba(136, 19, 55, 0.3); /* rose-900/30 */
+  background: rgba(255, 184, 0, 0.15); /* amber/30 */
   filter: blur(120px);
   -webkit-filter: blur(120px);
 }
@@ -46,7 +46,7 @@
   left: 10%;
   width: 80%;
   height: 40%;
-  background: rgba(180, 83, 9, 0.2); /* amber-700/20 */
+  background: rgba(255, 184, 0, 0.10); /* amber/20 */
   filter: blur(150px);
   -webkit-filter: blur(150px);
 }
@@ -55,7 +55,7 @@
   left: 10%;
   width: 80%;
   height: 50%;
-  background: rgba(30, 58, 138, 0.2); /* blue-900/20 */
+  background: rgba(0, 168, 150, 0.12); /* emerald/20 */
   filter: blur(120px);
   -webkit-filter: blur(120px);
 }
@@ -74,7 +74,7 @@
 .nav-bar-fade {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(10, 5, 16, 0.95) 0%, rgba(10, 5, 16, 0.80) 50%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(10, 15, 20, 0.95) 0%, rgba(10, 15, 20, 0.80) 50%, transparent 100%);
   -webkit-backdrop-filter: blur(24rpx); /* backdrop-blur-md → 24rpx */
   backdrop-filter: blur(24rpx);
   z-index: -1;
@@ -129,7 +129,7 @@
 /* Reference: w-5 h-5 strokeWidth 1.5, text-zinc-400 */
 .nav-icon {
   font-size: 40rpx;
-  color: #a1a1aa; /* text-zinc-400 */
+  color: #8B949E; /* text-secondary */
 }
 
 /* ─── Pill Tabs ─── */
@@ -173,14 +173,14 @@
 /* Reference inactive: bg-white/5 text-zinc-400 border border-white/10 */
 .tab-pill-inactive {
   background: rgba(255, 255, 255, 0.05);
-  color: #a1a1aa;
+  color: #8B949E;
   border: 2rpx solid rgba(255, 255, 255, 0.1);
 }
 .tab-pill-inactive .tab-pill-icon {
-  color: #a1a1aa;
+  color: #8B949E;
 }
 .tab-pill-inactive .tab-pill-label {
-  color: #a1a1aa;
+  color: #8B949E;
 }
 
 /* ─── Main Scroll ─── */
@@ -229,7 +229,7 @@
 .hero-banner-overlay-top {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, transparent 50%, #0a0510 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, transparent 50%, #0A0F14 100%);
   opacity: 0.9;
   z-index: 1;
 }
@@ -237,7 +237,7 @@
 .hero-banner-overlay-bottom {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to top, #0a0510 0%, rgba(10, 5, 16, 0.6) 40%, transparent 100%);
+  background: linear-gradient(to top, #0A0F14 0%, rgba(10, 15, 20, 0.6) 40%, transparent 100%);
   opacity: 0.9;
   z-index: 1;
 }
@@ -279,7 +279,7 @@
 /* Reference: text-sm text-zinc-300 mb-3 drop-shadow-md font-medium */
 .hero-banner-author {
   font-size: 28rpx;   /* text-sm → 28rpx */
-  color: #d4d4d8;      /* text-zinc-300 */
+  color: #E6EDF3;      /* text-zinc-300 */
   font-weight: 500;    /* font-medium → 500 */
   margin-bottom: 12rpx; /* mb-3 → 12rpx */
   filter: drop-shadow(0 8rpx 12rpx rgba(0, 0, 0, 0.25)); /* drop-shadow-md */
@@ -287,7 +287,7 @@
 /* Reference: text-xs text-zinc-400 mb-6 line-clamp-2 leading-relaxed */
 .hero-banner-desc {
   font-size: 24rpx;   /* text-xs → 24rpx */
-  color: #a1a1aa;      /* text-zinc-400 */
+  color: #8B949E;      /* text-zinc-400 */
   line-height: 1.625;  /* leading-relaxed → 1.625 */
   margin-bottom: 24rpx; /* mb-6 → 24rpx */
 }
@@ -333,7 +333,7 @@
 .section-title-badge {
   font-size: 24rpx;  /* text-xs → 24rpx */
   font-weight: 500;   /* font-medium → 500 */
-  color: #71717a;      /* text-zinc-500 */
+  color: #484F58;      /* text-zinc-500 */
 }
 
 /* ─── Podium ─── */
@@ -361,14 +361,15 @@
   align-items: center;
 }
 
-/* Reference: absolute -top-5 text-xl drop-shadow-[0_0_8px_rgba(251,191,36,0.8)] z-20 */
-.podium-crown {
-  font-size: 40rpx;   /* text-xl → 40rpx */
+/* Reference: absolute -top-5 text-xl drop-shadow z-20 */
+.podium-crown-icon {
+  font-size: 40rpx;
   position: absolute;
-  top: -40rpx;         /* -top-5 → -40rpx */
+  top: -40rpx;
   left: 50%;
   transform: translateX(-50%);
-  text-shadow: 0 0 16rpx rgba(251, 191, 36, 0.8);
+  color: #FFB800;
+  text-shadow: 0 0 16rpx rgba(255, 184, 0, 0.8);
   z-index: 20;
 }
 
@@ -384,22 +385,22 @@
 }
 /* Reference: bg-gradient-to-tr from-amber-500 to-yellow-200 */
 .podium-ring-gold {
-  background: linear-gradient(to top right, #f59e0b, #fef08a);
+  background: linear-gradient(to top right, #FFB800, #FFD666);
 }
 /* Reference: bg-gradient-to-tr from-zinc-400 to-zinc-100 */
 .podium-ring-silver {
-  background: linear-gradient(to top right, #a1a1aa, #f4f4f5);
+  background: linear-gradient(to top right, #8B949E, #E6EDF3);
 }
 /* Reference: bg-gradient-to-tr from-orange-600 to-orange-300 */
 .podium-ring-bronze {
-  background: linear-gradient(to top right, #ea580c, #fdba74);
+  background: linear-gradient(to top right, #D29922, #F0D87E);
 }
 .podium-avatar-inner {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: #1a0b2e;
-  border: 3rpx solid #1a0b2e; /* border-[1.5px] border-[#1a0b2e] */
+  background: #161B22;
+  border: 3rpx solid #161B22; /* border-[1.5px] */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -446,18 +447,18 @@
 }
 /* Reference: text-amber-300, textShadow 0 2px 10px rgba(251,191,36,0.5) */
 .podium-score-gold {
-  color: #fcd34d;
-  text-shadow: 0 4rpx 20rpx rgba(251, 191, 36, 0.5);
+  color: #FFD666;
+  text-shadow: 0 4rpx 20rpx rgba(255, 184, 0, 0.5);
 }
 /* Reference: text-zinc-200 */
 .podium-score-silver {
-  color: #e4e4e7;
-  text-shadow: 0 4rpx 20rpx rgba(161, 161, 170, 0.5);
+  color: #E6EDF3;
+  text-shadow: 0 4rpx 20rpx rgba(139, 148, 158, 0.5);
 }
 /* Reference: text-orange-400 */
 .podium-score-bronze {
-  color: #fb923c;
-  text-shadow: 0 4rpx 20rpx rgba(217, 119, 6, 0.5);
+  color: #F0D87E;
+  text-shadow: 0 4rpx 20rpx rgba(210, 153, 34, 0.5);
 }
 
 /* Pillar */
@@ -481,24 +482,24 @@
 /* Reference: h-32 → 256rpx */
 .pillar-gold {
   height: 256rpx;
-  background: linear-gradient(180deg, rgba(251, 191, 36, 0.3) 0%, rgba(251, 191, 36, 0) 100%);
-  border-color: rgba(251, 191, 36, 0.3); /* border-amber-400/30 */
+  background: linear-gradient(180deg, rgba(255, 184, 0, 0.3) 0%, rgba(255, 184, 0, 0) 100%);
+  border-color: rgba(255, 184, 0, 0.3);
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 /* Reference: h-24 → 192rpx */
 .pillar-silver {
   height: 192rpx;
-  background: linear-gradient(180deg, rgba(161, 161, 170, 0.3) 0%, rgba(161, 161, 170, 0) 100%);
-  border-color: rgba(161, 161, 170, 0.3); /* border-zinc-300/30 */
+  background: linear-gradient(180deg, rgba(139, 148, 158, 0.3) 0%, rgba(139, 148, 158, 0) 100%);
+  border-color: rgba(139, 148, 158, 0.3);
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 /* Reference: h-20 → 160rpx */
 .pillar-bronze {
   height: 160rpx;
-  background: linear-gradient(180deg, rgba(217, 119, 6, 0.3) 0%, rgba(217, 119, 6, 0) 100%);
-  border-color: rgba(217, 119, 6, 0.3); /* border-orange-600/30 */
+  background: linear-gradient(180deg, rgba(210, 153, 34, 0.3) 0%, rgba(210, 153, 34, 0) 100%);
+  border-color: rgba(210, 153, 34, 0.3);
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
@@ -535,7 +536,7 @@
   border-radius: 32rpx; /* rounded-2xl → 32rpx */
   overflow: hidden;
   position: relative;
-  background: #242426;
+  background: #1E252E;
   border: 2rpx solid rgba(255, 255, 255, 0.1); /* border-white/10 */
   box-shadow: 0 20rpx 50rpx rgba(0, 0, 0, 0.25); /* shadow-lg */
   opacity: 0;
@@ -559,7 +560,18 @@
 .lb-card-bg-fade {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to bottom, transparent 0%, rgba(36, 36, 38, 0.60) 50%, #242426 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(30, 37, 46, 0.60) 50%, #1E252E 100%);
+}
+
+/* Cover Image */
+.lb-card-cover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 280rpx;
+  z-index: 0;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
 }
 
 /* Card Content */
@@ -596,16 +608,16 @@
   padding-bottom: 8rpx;
 }
 .rank-badge-pennant.badge-gold {
-  background: linear-gradient(180deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
-  filter: drop-shadow(0 8rpx 12rpx rgba(251, 191, 36, 0.3));
+  background: linear-gradient(180deg, #FFD666 0%, #FFB800 50%, #CC9300 100%);
+  filter: drop-shadow(0 8rpx 12rpx rgba(255, 184, 0, 0.3));
 }
 .rank-badge-pennant.badge-silver {
-  background: linear-gradient(180deg, #F4F4F5 0%, #A1A1AA 50%, #71717A 100%);
-  filter: drop-shadow(0 8rpx 12rpx rgba(161, 161, 170, 0.3));
+  background: linear-gradient(180deg, #E6EDF3 0%, #8B949E 50%, #484F58 100%);
+  filter: drop-shadow(0 8rpx 12rpx rgba(139, 148, 158, 0.3));
 }
 .rank-badge-pennant.badge-bronze {
-  background: linear-gradient(180deg, #FDBA74 0%, #EA580C 50%, #9A3412 100%);
-  filter: drop-shadow(0 8rpx 12rpx rgba(217, 119, 6, 0.3));
+  background: linear-gradient(180deg, #F0D87E 0%, #D29922 50%, #8B6914 100%);
+  filter: drop-shadow(0 8rpx 12rpx rgba(210, 153, 34, 0.3));
 }
 /* Reference: text-[8px] font-black uppercase tracking-widest, color from colors.text, opacity 0.8 */
 .pennant-top {
@@ -655,7 +667,7 @@
 .rank-badge-simple-num {
   font-size: 28rpx; /* text-sm → 28rpx */
   font-weight: 700;  /* font-bold → 700 */
-  color: #a1a1aa;    /* text-zinc-400 */
+  color: #8B949E;    /* text-zinc-400 */
 }
 
 /* Title Area */
@@ -674,7 +686,7 @@
 /* Reference: text-sm text-zinc-300 truncate mt-1 drop-shadow-md */
 .lb-author {
   font-size: 28rpx; /* text-sm → 28rpx */
-  color: #d4d4d8;    /* text-zinc-300 */
+  color: #E6EDF3;    /* text-zinc-300 */
   margin-top: 4rpx;  /* mt-1 → 4rpx */
   filter: drop-shadow(0 8rpx 12rpx rgba(0, 0, 0, 0.25)); /* drop-shadow-md */
 }
@@ -710,7 +722,7 @@
 /* Reference: text-[10px] text-zinc-400 font-medium */
 .progress-label {
   font-size: 20rpx; /* text-[10px] → 20rpx */
-  color: #a1a1aa;    /* text-zinc-400 */
+  color: #8B949E;    /* text-zinc-400 */
   font-weight: 500;  /* font-medium → 500 */
 }
 
@@ -725,23 +737,23 @@
 /* Reference: w-3.5 h-3.5 text-orange-500 (flame icon → emoji) */
 .stat-icon-fire {
   font-size: 22rpx;
-  color: #f97316; /* text-orange-500 */
+  color: #FFB800; /* amber accent */
 }
 /* Reference: text-xs font-medium text-zinc-300 */
 .stat-text-light {
   font-size: 24rpx; /* text-xs → 24rpx */
   font-weight: 500;  /* font-medium → 500 */
-  color: #d4d4d8;    /* text-zinc-300 */
+  color: #E6EDF3;    /* text-zinc-300 */
 }
 /* Reference: w-3.5 h-3.5 text-blue-400 (play icon) */
 .stat-icon-play {
   font-size: 18rpx;
-  color: #60a5fa; /* text-blue-400 */
+  color: #00A896; /* emerald accent */
 }
 /* Reference: text-xs text-zinc-400 */
 .stat-text-dim {
   font-size: 24rpx; /* text-xs → 24rpx */
-  color: #a1a1aa;    /* text-zinc-400 */
+  color: #8B949E;    /* text-zinc-400 */
 }
 
 /* Tags */
@@ -777,7 +789,7 @@
 /* Reference: absolute top-2.5 left-2.5 text-zinc-500 font-serif text-2xl leading-none */
 .quote-mark {
   font-size: 48rpx; /* text-2xl → 48rpx */
-  color: #71717a;    /* text-zinc-500 */
+  color: #484F58;    /* text-zinc-500 */
   font-family: serif;
   line-height: 1; /* leading-none → 1 */
 }
@@ -796,7 +808,7 @@
 /* Reference: text-xs text-zinc-300 pl-5 pr-2 line-clamp-2 leading-relaxed */
 .quote-text {
   font-size: 24rpx; /* text-xs → 24rpx */
-  color: #d4d4d8;    /* text-zinc-300 */
+  color: #E6EDF3;    /* text-zinc-300 */
   padding-left: 20rpx; /* pl-5 → 20rpx */
   padding-right: 8rpx; /* pr-2 → 8rpx */
   line-height: 1.625;  /* leading-relaxed → 1.625 */

@@ -4,42 +4,42 @@
  */
 
 page {
-  /* ─── Color System (Dark Theme) ─── */
-  --color-bg: #0a0510;
-  --color-surface: #1a1a1e;
-  --color-surface-elevated: #242428;
+  /* ─── Color System (Dark Theme — Emerald/Amber) ─── */
+  --color-bg: #0A0F14;
+  --color-surface: #161B22;
+  --color-surface-elevated: #1E252E;
   --color-surface-alt: rgba(255, 255, 255, 0.04);
   --color-surface-hover: rgba(255, 255, 255, 0.06);
   --color-border: rgba(255, 255, 255, 0.06);
   --color-border-strong: rgba(255, 255, 255, 0.10);
 
   /* Text */
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #a1a1aa;
-  --color-text-tertiary: #52525b;
-  --color-text-inverse: #0a0510;
+  --color-text-primary: #E6EDF3;
+  --color-text-secondary: #8B949E;
+  --color-text-tertiary: #484F58;
+  --color-text-inverse: #0A0F14;
 
-  /* Accent */
-  --color-accent: #60a5fa;
-  --color-accent-dark: #3b82f6;
-  --color-accent-light: rgba(96, 165, 250, 0.10);
-  --color-accent-gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
+  /* Accent — Emerald */
+  --color-accent: #00A896;
+  --color-accent-dark: #008F7F;
+  --color-accent-light: rgba(0, 168, 150, 0.10);
+  --color-accent-gradient: linear-gradient(135deg, #00A896 0%, #00C9B0 100%);
 
-  /* Secondary accent — orange */
-  --color-secondary: #f97316;
-  --color-secondary-light: rgba(249, 115, 22, 0.08);
+  /* Secondary accent — Amber */
+  --color-secondary: #FFB800;
+  --color-secondary-light: rgba(255, 184, 0, 0.08);
 
   /* Status */
-  --color-gold: #fbbf24;
-  --color-gold-gradient: linear-gradient(180deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
-  --color-gold-light: rgba(251, 191, 36, 0.08);
-  --color-silver: #a1a1aa;
-  --color-silver-gradient: linear-gradient(180deg, #F4F4F5 0%, #A1A1AA 50%, #71717A 100%);
-  --color-bronze: #ea580c;
-  --color-bronze-gradient: linear-gradient(180deg, #FDBA74 0%, #EA580C 50%, #9A3412 100%);
+  --color-gold: #FFB800;
+  --color-gold-gradient: linear-gradient(180deg, #FFD666 0%, #FFB800 50%, #CC9300 100%);
+  --color-gold-light: rgba(255, 184, 0, 0.08);
+  --color-silver: #8B949E;
+  --color-silver-gradient: linear-gradient(180deg, #E6EDF3 0%, #8B949E 50%, #484F58 100%);
+  --color-bronze: #D29922;
+  --color-bronze-gradient: linear-gradient(180deg, #F0D87E 0%, #D29922 50%, #8B6914 100%);
   --color-success: #34d399;
   --color-success-light: rgba(52, 211, 153, 0.08);
-  --color-warning: #fbbf24;
+  --color-warning: #FFB800;
   --color-danger: #f43f5e;
   --color-danger-light: rgba(244, 63, 94, 0.08);
 
@@ -51,8 +51,8 @@ page {
   --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 8rpx 24rpx rgba(96, 165, 250, 0.12);
-  --shadow-gold: 0 4rpx 16rpx rgba(251, 191, 36, 0.2);
+  --shadow-accent: 0 8rpx 24rpx rgba(0, 168, 150, 0.12);
+  --shadow-gold: 0 4rpx 16rpx rgba(255, 184, 0, 0.2);
 
   /* ─── Radius ─── */
   --radius-xs: 8rpx;
@@ -169,20 +169,6 @@ view, text, image, scroll-view, swiper {
 .badge-accent {
   background: var(--color-accent-light);
   color: var(--color-accent);
-}
-
-/* ─── Text Gradients ─── */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.text-gradient-gold {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* ─── Animations ─── */

@@ -6,16 +6,16 @@
     "pages/profile/profile"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#0a0510",
+    "navigationBarBackgroundColor": "#0A0F14",
     "navigationBarTitleText": "AAFF AI视频榜",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#0a0510",
+    "backgroundColor": "#0A0F14",
     "backgroundTextStyle": "light"
   },
   "tabBar": {
     "custom": true,
-    "color": "#71717a",
-    "selectedColor": "#60a5fa",
+    "color": "#484F58",
+    "selectedColor": "#00A896",
     "backgroundColor": "#000000",
     "borderStyle": "black",
     "list": [

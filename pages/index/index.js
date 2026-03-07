@@ -3,28 +3,28 @@ const rankings = require('../../data/rankings.json')
 
 /* Color palette for CSS gradient backgrounds (no external images) */
 var GRADIENT_COLORS = [
-  ['#7c3aed', '#a78bfa'],
+  ['#00A896', '#00C9B0'],
   ['#2563eb', '#60a5fa'],
-  ['#db2777', '#f472b6'],
+  ['#0891b2', '#22d3ee'],
   ['#ea580c', '#fb923c'],
   ['#059669', '#34d399'],
   ['#d97706', '#fbbf24'],
-  ['#7c3aed', '#c084fc'],
+  ['#0d9488', '#2dd4bf'],
   ['#0891b2', '#22d3ee'],
-  ['#4f46e5', '#818cf8'],
+  ['#0284c7', '#38bdf8'],
   ['#be123c', '#fb7185'],
   ['#15803d', '#4ade80'],
-  ['#9333ea', '#c084fc'],
+  ['#00A896', '#34d399'],
   ['#0d9488', '#2dd4bf'],
   ['#c2410c', '#fdba74']
 ]
 
 /* Hero banner gradient presets */
 var HERO_GRADIENTS = [
-  'linear-gradient(135deg, #1e1b4b, #4c1d95, #831843)',
-  'linear-gradient(135deg, #1e3a5f, #0c4a6e, #164e63)',
-  'linear-gradient(135deg, #1a2e05, #365314, #3f6212)',
-  'linear-gradient(135deg, #451a03, #78350f, #92400e)'
+  'linear-gradient(135deg, #0A0F14, #00504A, #003D36)',
+  'linear-gradient(135deg, #0A0F14, #0c4a6e, #164e63)',
+  'linear-gradient(135deg, #0A0F14, #365314, #3f6212)',
+  'linear-gradient(135deg, #0A0F14, #78350f, #92400e)'
 ]
 
 function formatViews(n) {
@@ -42,8 +42,8 @@ function formatDuration(seconds) {
 
 function getApprovalColor(value) {
   if (value >= 95) return '#f43f5e'
-  if (value >= 90) return '#f59e0b'
-  return '#3b82f6'
+  if (value >= 90) return '#FFB800'
+  return '#00A896'
 }
 
 /* Generate a synthetic approval rating from views + likes */
@@ -72,7 +72,7 @@ Page({
     navHeight: 0,
     tabs: ['年榜', '月榜', '动画榜', '怪就怪AI'],
     tabKeys: ['AAFF精选年榜', '月榜', '动画榜', '怪就怪AI榜'],
-    tabIcons: ['\ue0d0', '\ue29b', '\ue0d0', '\ue29b'],
+    tabIcons: ['\ue244', '\ue078', '\ue13c', '\ue09b'],
     activeMainTab: 0,
     featured: null,
     podiumItems: [],

@@ -25,8 +25,8 @@
   color: var(--color-text-tertiary);
 }
 .ri-rank-top {
-  background: linear-gradient(135deg, #fbbf24, #d97706);
-  box-shadow: 0 4rpx 12rpx rgba(251, 191, 36, 0.3);
+  background: linear-gradient(135deg, #FFB800, #CC9300);
+  box-shadow: 0 4rpx 12rpx rgba(255, 184, 0, 0.3);
 }
 .ri-rank-top .ri-rank-num { color: #FFFFFF; }
 .ri-cover-box {

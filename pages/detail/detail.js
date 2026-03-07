@@ -2,11 +2,11 @@ const rankings = require('../../data/rankings.json')
 
 /* Color palette for related items */
 var RELATED_GRADIENTS = [
-  ['#db2777', '#f472b6'],
+  ['#00A896', '#00C9B0'],
   ['#ea580c', '#fb923c'],
   ['#059669', '#34d399'],
   ['#d97706', '#fbbf24'],
-  ['#4f46e5', '#818cf8']
+  ['#0891b2', '#22d3ee']
 ]
 
 function formatViews(n) {
@@ -61,7 +61,7 @@ Page({
     var info = {
       id: item.slug,
       title: title,
-      coverGradient: 'linear-gradient(135deg, #7c3aed, #2563eb)',
+      coverGradient: 'linear-gradient(135deg, #00A896, #00C9B0)',
       author: author,
       authorInitial: author ? author[0] : '?',
       authorDesc: item.platform ? '来自 ' + item.platform : '',

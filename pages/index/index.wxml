@@ -112,7 +112,7 @@
       <!-- Rank 1 -->
       <view class="podium-item podium-item-1 flex flex-col items-center">
         <view class="podium-avatar-area relative flex flex-col items-center">
-          <text class="podium-crown">👑</text>
+          <text class="icon podium-crown-icon">\ue244</text>
           <view class="podium-avatar-ring podium-ring-gold">
             <view class="podium-avatar-inner">
               <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
@@ -164,6 +164,9 @@
           <view class="lb-card-bg-gradient" style="background: linear-gradient(135deg, {{item.gradientFrom}}, {{item.gradientTo}});"></view>
           <view class="lb-card-bg-fade"></view>
         </view>
+
+        <!-- Cover Image -->
+        <image wx:if="{{item.cover}}" class="lb-card-cover" src="{{item.cover}}" mode="aspectFill" />
 
         <!-- Card Content -->
         <view class="lb-card-content">

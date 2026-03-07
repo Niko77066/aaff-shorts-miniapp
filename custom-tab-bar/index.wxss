@@ -43,21 +43,21 @@
 /* Reference: w-6 h-6 icon, inactive: text-zinc-500 */
 .tab-pill-item-icon {
   font-size: 48rpx; /* w-6 h-6 → 48rpx */
-  color: #71717a; /* text-zinc-500 */
+  color: #484F58; /* text-tertiary */
   transition: all 0.3s ease;
 }
 
-/* Reference: active: text-white scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] */
+/* Reference: active: text-white scale-110 drop-shadow-[0_0_8px_rgba(0,168,150,0.5)] */
 .tab-pill-item-icon-active {
-  color: #FFFFFF;
+  color: #00C9B0;
   transform: scale(1.1);
-  text-shadow: 0 0 16rpx rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 16rpx rgba(0, 168, 150, 0.5);
 }
 
 /* Reference: text-[9px] font-medium tracking-wider, inactive: text-zinc-500 */
 .tab-pill-item-label {
   font-size: 18rpx; /* text-[9px] → 18rpx */
-  color: #71717a; /* text-zinc-500 */
+  color: #484F58; /* text-tertiary */
   font-weight: 500; /* font-medium → 500 */
   letter-spacing: 3rpx; /* tracking-wider → 3rpx */
   transition: color 0.3s ease;
@@ -65,6 +65,6 @@
 
 /* Reference: active: text-white */
 .tab-pill-item-label-active {
-  color: #FFFFFF;
+  color: #E6EDF3;
   font-weight: 500;
 }

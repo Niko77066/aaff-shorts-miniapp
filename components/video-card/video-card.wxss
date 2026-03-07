@@ -50,14 +50,14 @@
   justify-content: center;
 }
 .rank-badge.rank-1 {
-  background: linear-gradient(135deg, #fbbf24, #d97706);
-  box-shadow: 0 4rpx 12rpx rgba(251, 191, 36, 0.3);
+  background: linear-gradient(135deg, #FFB800, #CC9300);
+  box-shadow: 0 4rpx 12rpx rgba(255, 184, 0, 0.3);
 }
 .rank-badge.rank-2 {
-  background: linear-gradient(135deg, #a1a1aa, #71717a);
+  background: linear-gradient(135deg, #8B949E, #484F58);
 }
 .rank-badge.rank-3 {
-  background: linear-gradient(135deg, #ea580c, #9a3412);
+  background: linear-gradient(135deg, #D29922, #8B6914);
 }
 .rank-text {
   color: #fff;
