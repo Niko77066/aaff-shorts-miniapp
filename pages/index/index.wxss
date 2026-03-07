@@ -568,12 +568,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 240rpx;
+  width: 280rpx;
   height: 100%;
   z-index: 0;
-  opacity: 0.25;
-  -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.8));
-  mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.8));
+  opacity: 0.45;
+  -webkit-mask-image: linear-gradient(to right, transparent 10%, rgba(0,0,0,0.7) 100%);
+  mask-image: linear-gradient(to right, transparent 10%, rgba(0,0,0,0.7) 100%);
+  border-radius: 0 16rpx 16rpx 0;
 }
 
 /* Card Content */
