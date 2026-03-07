@@ -37,23 +37,23 @@
 
   <!-- Menu List -->
   <view class="menu-section">
-    <view class="menu-group card">
+    <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="history">
-        <view class="menu-icon-box" style="background: #FFF0EB;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">🕐</text>
         </view>
         <text class="menu-item-text flex-1">观看历史</text>
         <text class="menu-arrow">›</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="favorites">
-        <view class="menu-icon-box" style="background: #FEF3C7;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">⭐</text>
         </view>
         <text class="menu-item-text flex-1">我的收藏</text>
         <text class="menu-arrow">›</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="likes">
-        <view class="menu-icon-box" style="background: #FCE7F3;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">♥</text>
         </view>
         <text class="menu-item-text flex-1">我的点赞</text>
@@ -61,9 +61,9 @@
       </view>
     </view>
 
-    <view class="menu-group card">
+    <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="submit">
-        <view class="menu-icon-box" style="background: #EEF0FF;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">📤</text>
         </view>
         <text class="menu-item-text flex-1">提交作品</text>
@@ -71,14 +71,14 @@
         <text class="menu-arrow">›</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="about">
-        <view class="menu-icon-box" style="background: #F0FDF4;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">ℹ</text>
         </view>
         <text class="menu-item-text flex-1">关于AAFF</text>
         <text class="menu-arrow">›</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="feedback">
-        <view class="menu-icon-box" style="background: #F0F9FF;">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">💬</text>
         </view>
         <text class="menu-item-text flex-1">意见反馈</text>
@@ -86,9 +86,9 @@
       </view>
     </view>
 
-    <view class="menu-group card">
+    <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="settings">
-        <view class="menu-icon-box" style="background: var(--color-surface-alt);">
+        <view class="menu-icon-box">
           <text class="menu-icon-emoji">⚙</text>
         </view>
         <text class="menu-item-text flex-1">设置</text>

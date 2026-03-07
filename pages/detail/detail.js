@@ -13,9 +13,9 @@ Page({
     var info = {
       id: id,
       title: '消逝的记忆 — 当AI学会遗忘',
-      cover: 'https://picsum.photos/seed/' + id + '/800/500',
+      coverGradient: 'linear-gradient(135deg, #7c3aed, #2563eb)',
       author: 'CyberArt Studio',
-      authorAvatar: 'https://picsum.photos/seed/avatar_detail/100/100',
+      authorInitial: 'C',
       authorDesc: 'AI视觉艺术创作者 | 10.2万粉丝',
       score: '9.5',
       duration: '3:42',
@@ -31,13 +31,21 @@ Page({
       description: '在一个AI已经深度融入人类生活的近未来，主人公发现自己珍贵的记忆正在被逐渐"优化"。这部短片探讨了在人工智能时代，记忆、身份与人性之间的微妙关系。使用Sora生成的视觉效果营造出一种既熟悉又陌生的氛围，挑战观众对现实与虚拟边界的认知。'
     }
 
+    var relatedGradients = [
+      ['#db2777', '#f472b6'],
+      ['#ea580c', '#fb923c'],
+      ['#059669', '#34d399'],
+      ['#d97706', '#fbbf24'],
+      ['#4f46e5', '#818cf8']
+    ]
     var relatedItems = []
     var titles = ['星际迷航2077', '最后一个画师', '数字花园', '虚拟黄昏', '机器之心']
     for (var i = 0; i < 5; i++) {
       relatedItems.push({
         id: 'related_' + i,
         title: titles[i],
-        cover: 'https://picsum.photos/seed/related' + i + '/400/300',
+        gradientFrom: relatedGradients[i][0],
+        gradientTo: relatedGradients[i][1],
         score: (9.3 - i * 0.2).toFixed(1)
       })
     }

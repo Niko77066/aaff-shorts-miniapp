@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════
-   Rank List Page — Dashboard Style
+   Rank List Page — Dark Cyberpunk Theme
    ════════════════════════════════════════ */
 
 .page-ranklist {
@@ -11,7 +11,7 @@
 .filter-bar {
   background: var(--color-surface);
   padding: 16rpx 0;
-  box-shadow: var(--shadow-xs);
+  border-bottom: 2rpx solid var(--color-border);
 }
 .filter-scroll { white-space: nowrap; }
 .filter-pills {
@@ -23,7 +23,7 @@
   display: inline-flex;
   padding: 12rpx 28rpx;
   border-radius: var(--radius-full);
-  background: var(--color-surface-alt);
+  background: rgba(255, 255, 255, 0.05);
   border: 2rpx solid transparent;
   transition: all 0.3s;
 }
@@ -54,7 +54,6 @@
   padding: 10rpx 24rpx;
   border-radius: var(--radius-full);
   background: var(--color-surface);
-  box-shadow: var(--shadow-xs);
   border: 2rpx solid var(--color-border);
 }
 .sort-text {

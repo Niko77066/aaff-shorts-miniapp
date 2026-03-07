@@ -2,7 +2,7 @@
   "miniprogramRoot": "./",
   "projectname": "ai-shorts-miniapp",
   "description": "AI Shorts - AI Generated Short Film Platform",
-  "appid": "touristappid",
+  "appid": "wx6b5b93832e5e382a",
   "setting": {
     "urlCheck": false,
     "es6": true,

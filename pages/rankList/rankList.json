@@ -2,5 +2,7 @@
   "usingComponents": {
     "rank-item": "/components/rank-item/rank-item"
   },
-  "navigationBarTitleText": "完整榜单"
+  "navigationBarTitleText": "完整榜单",
+  "navigationBarBackgroundColor": "#0a0510",
+  "navigationBarTextStyle": "white"
 }

@@ -1,4 +1,4 @@
-/* Rank Item Component — Dashboard Style */
+/* Rank Item Component — Dark Theme */
 .ri-wrap {
   display: flex;
   align-items: center;
@@ -6,7 +6,6 @@
   background: var(--color-surface);
   border-radius: var(--radius-xl);
   margin-bottom: 14rpx;
-  box-shadow: var(--shadow-sm);
   border: 2rpx solid var(--color-border);
 }
 .ri-rank {
@@ -18,14 +17,17 @@
   justify-content: center;
   flex-shrink: 0;
   margin-right: 14rpx;
-  background: var(--color-surface-alt);
+  background: rgba(255, 255, 255, 0.05);
 }
 .ri-rank-num {
   font-size: var(--font-md);
   font-weight: 800;
   color: var(--color-text-tertiary);
 }
-.ri-rank-top { background: linear-gradient(135deg, #FFB020, #FF8C00); box-shadow: 0 4rpx 12rpx rgba(255,176,32,0.3); }
+.ri-rank-top {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  box-shadow: 0 4rpx 12rpx rgba(251, 191, 36, 0.3);
+}
 .ri-rank-top .ri-rank-num { color: #FFFFFF; }
 .ri-cover-box {
   width: 112rpx;
@@ -34,8 +36,10 @@
   overflow: hidden;
   flex-shrink: 0;
   margin-right: 18rpx;
+  border: 2rpx solid var(--color-border);
 }
 .ri-cover { width: 100%; height: 100%; }
+.ri-cover-gradient { width: 100%; height: 100%; opacity: 0.7; border-radius: var(--radius-md); }
 .ri-body { min-width: 0; }
 .ri-title {
   font-size: var(--font-base);
@@ -80,11 +84,12 @@
   margin-top: 8rpx;
   padding: 3rpx 12rpx;
   border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
 }
 .ri-trend.up { background: var(--color-success-light); }
 .ri-trend.up .ri-trend-arrow,
 .ri-trend.up .ri-trend-val { color: var(--color-success); }
-.ri-trend.down { background: var(--color-secondary-light); }
+.ri-trend.down { background: var(--color-danger-light); }
 .ri-trend.down .ri-trend-arrow,
 .ri-trend.down .ri-trend-val { color: var(--color-danger); }
 .ri-trend-arrow {

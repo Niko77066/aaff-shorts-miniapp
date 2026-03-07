@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "作品详情"
+  "navigationBarTitleText": "作品详情",
+  "navigationBarBackgroundColor": "#0a0510",
+  "navigationBarTextStyle": "white"
 }

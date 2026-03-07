@@ -1,56 +1,60 @@
 /**
  * AAFF AI Video Rankings - Global Styles
- * Design System: Modern Dashboard — inspired by Dribbble management dashboards
- * Palette: Cool gray base, indigo-violet accent gradient, soft layered shadows
+ * Design System: Dark Cyberpunk — glass morphism, gradient orbs, deep purple-black
  */
 
 page {
-  /* ─── Color System ─── */
-  --color-bg: #F4F5FA;
-  --color-surface: #FFFFFF;
-  --color-surface-elevated: #FFFFFF;
-  --color-surface-alt: #F0F1F8;
-  --color-surface-hover: #F7F7FC;
-  --color-border: rgba(0, 0, 0, 0.05);
-  --color-border-strong: rgba(0, 0, 0, 0.08);
+  /* ─── Color System (Dark Theme) ─── */
+  --color-bg: #0a0510;
+  --color-surface: #242426;
+  --color-surface-elevated: #2a2a2e;
+  --color-surface-alt: rgba(255, 255, 255, 0.05);
+  --color-surface-hover: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.12);
 
   /* Text */
-  --color-text-primary: #1E1F2B;
-  --color-text-secondary: #6E7191;
-  --color-text-tertiary: #A0A3BD;
-  --color-text-inverse: #FFFFFF;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary: #71717a;
+  --color-text-inverse: #0a0510;
 
-  /* Accent — indigo to violet gradient */
-  --color-accent: #6C5CE7;
-  --color-accent-dark: #5A4BD1;
-  --color-accent-light: #F0EEFF;
-  --color-accent-gradient: linear-gradient(135deg, #6C5CE7 0%, #A17FE0 100%);
+  /* Accent */
+  --color-accent: #60a5fa;
+  --color-accent-dark: #3b82f6;
+  --color-accent-light: rgba(96, 165, 250, 0.12);
+  --color-accent-gradient: linear-gradient(135deg, #60a5fa 0%, #818cf8 100%);
 
-  /* Secondary accent — warm coral */
-  --color-secondary: #FF6B6B;
-  --color-secondary-light: #FFF0F0;
+  /* Secondary accent — orange */
+  --color-secondary: #f97316;
+  --color-secondary-light: rgba(249, 115, 22, 0.1);
 
   /* Status */
-  --color-gold: #FFB020;
-  --color-gold-light: #FFF8E8;
-  --color-silver: #A0A3BD;
-  --color-bronze: #CD7F32;
-  --color-success: #00C48C;
-  --color-success-light: #E6FAF3;
-  --color-warning: #FFB020;
-  --color-danger: #FF6B6B;
+  --color-gold: #fbbf24;
+  --color-gold-gradient: linear-gradient(180deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+  --color-gold-light: rgba(251, 191, 36, 0.1);
+  --color-silver: #a1a1aa;
+  --color-silver-gradient: linear-gradient(180deg, #F4F4F5 0%, #A1A1AA 50%, #71717A 100%);
+  --color-bronze: #ea580c;
+  --color-bronze-gradient: linear-gradient(180deg, #FDBA74 0%, #EA580C 50%, #9A3412 100%);
+  --color-success: #34d399;
+  --color-success-light: rgba(52, 211, 153, 0.1);
+  --color-warning: #fbbf24;
+  --color-danger: #f43f5e;
+  --color-danger-light: rgba(244, 63, 94, 0.1);
 
-  --color-tag-bg: #F0F1F8;
+  --color-tag-bg: rgba(255, 255, 255, 0.08);
 
-  /* ─── Shadows — layered for depth ─── */
-  --shadow-xs: 0 1rpx 3rpx rgba(0, 0, 0, 0.02);
-  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.04), 0 1rpx 2rpx rgba(0, 0, 0, 0.02);
-  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.06), 0 2rpx 4rpx rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.08), 0 2rpx 8rpx rgba(0, 0, 0, 0.03);
-  --shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.10), 0 4rpx 12rpx rgba(0, 0, 0, 0.04);
-  --shadow-accent: 0 8rpx 24rpx rgba(108, 92, 231, 0.25);
+  /* ─── Shadows (dark theme — deeper, more dramatic) ─── */
+  --shadow-xs: 0 1rpx 3rpx rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.4), 0 1rpx 2rpx rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.5), 0 2rpx 4rpx rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.6), 0 2rpx 8rpx rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.7), 0 4rpx 12rpx rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 8rpx 24rpx rgba(96, 165, 250, 0.15);
+  --shadow-gold: 0 4rpx 16rpx rgba(251, 191, 36, 0.3);
 
-  /* ─── Radius — generous for modern feel ─── */
+  /* ─── Radius ─── */
   --radius-xs: 8rpx;
   --radius-sm: 12rpx;
   --radius-md: 20rpx;
@@ -129,7 +133,21 @@ view, text, image, scroll-view, swiper {
   -webkit-box-orient: vertical;
 }
 
-/* ─── Card System ─── */
+/* ─── Glass Morphism ─── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-panel-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Card System (Dark) ─── */
 .card {
   background: var(--color-surface);
   border-radius: var(--radius-xl);
@@ -140,7 +158,7 @@ view, text, image, scroll-view, swiper {
   background: var(--color-surface);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
-  border: none;
+  border: 2rpx solid var(--color-border);
   overflow: hidden;
 }
 
@@ -159,6 +177,20 @@ view, text, image, scroll-view, swiper {
   color: var(--color-accent);
 }
 
+/* ─── Text Gradients ─── */
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ─── Animations ─── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24rpx); }
@@ -172,9 +204,17 @@ view, text, image, scroll-view, swiper {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+@keyframes springUp {
+  0% { opacity: 0; transform: translateY(60rpx) scale(0.9); }
+  60% { transform: translateY(-8rpx) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
 .animate-in {
   animation: fadeInUp 0.45s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 .animate-scale {
   animation: scaleIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+.animate-spring {
+  animation: springUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }

@@ -1,9 +1,8 @@
-/* Video Card Component — Dashboard Style */
+/* Video Card Component — Dark Theme */
 .video-card {
   background: var(--color-surface);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-md);
   border: 2rpx solid var(--color-border);
 }
 .card-cover {
@@ -11,6 +10,7 @@
   height: 220rpx;
 }
 .cover-img { width: 100%; height: 100%; }
+.cover-gradient { width: 100%; height: 100%; opacity: 0.7; }
 .cover-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -20,7 +20,7 @@
   padding: 14rpx;
 }
 .duration-badge {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10rpx);
   color: #fff;
   font-size: 20rpx;
@@ -29,7 +29,7 @@
   font-weight: 600;
 }
 .play-badge {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10rpx);
   color: #fff;
   font-size: 20rpx;
@@ -49,9 +49,16 @@
   align-items: center;
   justify-content: center;
 }
-.rank-badge.rank-1 { background: linear-gradient(135deg, #FFB020, #FF8C00); box-shadow: 0 4rpx 12rpx rgba(255,176,32,0.3); }
-.rank-badge.rank-2 { background: linear-gradient(135deg, #A0A3BD, #7B7F9E); }
-.rank-badge.rank-3 { background: linear-gradient(135deg, #CD7F32, #B8711E); }
+.rank-badge.rank-1 {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  box-shadow: 0 4rpx 12rpx rgba(251, 191, 36, 0.3);
+}
+.rank-badge.rank-2 {
+  background: linear-gradient(135deg, #a1a1aa, #71717a);
+}
+.rank-badge.rank-3 {
+  background: linear-gradient(135deg, #ea580c, #9a3412);
+}
 .rank-text {
   color: #fff;
   font-size: var(--font-sm);

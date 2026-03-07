@@ -1,7 +1,9 @@
 <!-- Video Card Component -->
 <view class="video-card" bindtap="onTap">
   <view class="card-cover relative overflow-hidden">
-    <image class="cover-img" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+    <view class="cover-gradient" wx:if="{{item.coverGradientFrom}}" style="background: linear-gradient(135deg, {{item.coverGradientFrom}}, {{item.coverGradientTo}});"></view>
+    <image class="cover-img" src="{{item.cover}}" mode="aspectFill" lazy-load wx:elif="{{item.cover}}"></image>
+    <view class="cover-gradient" wx:else style="background: linear-gradient(135deg, #7c3aed, #a78bfa);"></view>
     <view class="cover-overlay">
       <view class="duration-badge" wx:if="{{item.duration}}">{{item.duration}}</view>
       <view class="play-badge flex items-center" wx:if="{{item.playCountText}}">

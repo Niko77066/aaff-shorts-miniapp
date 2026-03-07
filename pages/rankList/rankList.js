@@ -69,15 +69,25 @@ Page({
     var authors = ['CyberArt', 'AIVision', 'PixelDream', 'NeuralFilm', 'DeepFrame', 'VoidStudio', 'ByteMotion', 'SynthWave', 'DreamMaker', 'FutureEye', 'LoopLab', 'DigiSoul', 'NeonMind', 'VoxelArts', 'CloudEyes']
     var tagSets = [['科幻','Sora'],['剧情','Runway'],['实验','Pika'],['动画','Kling'],['悬疑','Sora'],['温情','Luma'],['赛博','Runway'],['奇幻','Kling'],['文艺','Pika'],['冒险','Sora'],['科幻','Luma'],['哲思','Runway'],['奇幻','Pika'],['悬疑','Kling'],['爱情','Sora']]
 
+    var gradientColors = [
+      ['#7c3aed', '#a78bfa'], ['#2563eb', '#60a5fa'], ['#db2777', '#f472b6'],
+      ['#ea580c', '#fb923c'], ['#059669', '#34d399'], ['#d97706', '#fbbf24'],
+      ['#7c3aed', '#c084fc'], ['#0891b2', '#22d3ee'], ['#4f46e5', '#818cf8'],
+      ['#be123c', '#fb7185'], ['#15803d', '#4ade80'], ['#9333ea', '#c084fc'],
+      ['#0d9488', '#2dd4bf'], ['#c2410c', '#fdba74'], ['#6d28d9', '#a78bfa']
+    ]
+
     var start = (this.data.page - 1) * 15
     var newItems = []
     for (var i = 0; i < 15 && (start + i) < 50; i++) {
       var idx = (start + i) % titles.length
+      var gIdx = (start + i) % gradientColors.length
       newItems.push({
         id: 'item_' + (start + i),
         rank: start + i + 1,
         title: titles[idx],
-        cover: 'https://picsum.photos/seed/aaff' + (start + i + 20) + '/600/400',
+        coverGradientFrom: gradientColors[gIdx][0],
+        coverGradientTo: gradientColors[gIdx][1],
         author: authors[idx],
         score: (9.5 - (start + i) * 0.08).toFixed(1),
         playCountText: (Math.random() * 50 + 5).toFixed(1) + '万',

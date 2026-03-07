@@ -2,7 +2,7 @@
 <view class="page-detail">
   <!-- Video Player Area -->
   <view class="player-area">
-    <image class="player-cover" src="{{info.cover}}" mode="aspectFill"></image>
+    <view class="player-cover-gradient" style="background: {{info.coverGradient}};"></view>
     <view class="player-overlay flex items-center justify-center">
       <view class="play-btn-large">
         <text class="play-btn-icon">▶</text>
@@ -53,7 +53,9 @@
 
     <!-- Author Section -->
     <view class="author-section flex items-center" bindtap="goToAuthor">
-      <image class="author-avatar-lg" src="{{info.authorAvatar}}" mode="aspectFill"></image>
+      <view class="author-avatar-lg author-avatar-placeholder">
+        <text class="author-avatar-initial">{{info.authorInitial}}</text>
+      </view>
       <view class="author-info flex-1">
         <text class="author-name-lg">{{info.author}}</text>
         <text class="author-desc">{{info.authorDesc}}</text>
@@ -109,7 +111,7 @@
             data-id="{{item.id}}"
           >
             <view class="related-cover-wrap">
-              <image class="related-cover" src="{{item.cover}}" mode="aspectFill" lazy-load></image>
+              <view class="related-cover-gradient" style="background: linear-gradient(135deg, {{item.gradientFrom}}, {{item.gradientTo}});"></view>
             </view>
             <text class="related-title line-clamp-2">{{item.title}}</text>
             <text class="related-score">{{item.score}}</text>

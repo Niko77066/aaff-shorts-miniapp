@@ -23,6 +23,10 @@ Page({
   },
 
   onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({ selected: 1 })
+    }
+
     var userInfo = app.globalData.userInfo
     if (userInfo) {
       this.setData({ userInfo: userInfo })

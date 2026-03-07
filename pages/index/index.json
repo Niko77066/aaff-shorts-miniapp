@@ -1,8 +1,5 @@
 {
-  "usingComponents": {
-    "video-card": "/components/video-card/video-card",
-    "rank-item": "/components/rank-item/rank-item"
-  },
+  "usingComponents": {},
   "navigationStyle": "custom",
-  "backgroundColor": "#F5F6FA"
+  "backgroundColor": "#0a0510"
 }
