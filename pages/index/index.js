@@ -72,7 +72,7 @@ Page({
     navHeight: 0,
     tabs: ['年榜', '月榜', '动画榜', '怪就怪AI'],
     tabKeys: ['AAFF精选年榜', '月榜', '动画榜', '怪就怪AI榜'],
-    tabIcons: ['\ue244', '\ue078', '\ue13c', '\ue09b'],
+    tabIcons: ['\ue053', '\ue067', '\ue085', '\ue416'],
     activeMainTab: 0,
     featured: null,
     podiumItems: [],
@@ -82,8 +82,8 @@ Page({
   },
 
   onLoad() {
-    var sysInfo = wx.getSystemInfoSync()
-    var statusBarHeight = sysInfo.statusBarHeight
+    var windowInfo = wx.getWindowInfo()
+    var statusBarHeight = windowInfo.statusBarHeight
     var navHeight = statusBarHeight + 44
 
     this.setData({
@@ -96,7 +96,7 @@ Page({
 
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({ selected: 1 })
+      this.getTabBar().setData({ selected: 0 })
     }
   },
 
@@ -121,6 +121,10 @@ Page({
       this.loadData()
       this.setData({ refreshing: false })
     }.bind(this), 600)
+  },
+
+  onLoadMore() {
+    // No pagination yet — hasMore is always false
   },
 
   loadData() {

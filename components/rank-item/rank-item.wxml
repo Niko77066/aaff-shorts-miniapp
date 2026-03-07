@@ -22,7 +22,7 @@
   <view class="ri-right flex flex-col items-end">
     <text class="ri-score">{{item.score}}</text>
     <view class="ri-trend {{item.trend > 0 ? 'up' : item.trend < 0 ? 'down' : ''}}">
-      <text class="icon ri-trend-arrow">{{item.trend > 0 ? '\ue1e6' : item.trend < 0 ? '\ue1e4' : '-'}}</text>
+      <text class="icon ri-trend-arrow">{{item.trend > 0 ? '\ue190' : item.trend < 0 ? '\ue18f' : '-'}}</text>
       <text class="ri-trend-val">{{item.trendText}}</text>
     </view>
   </view>

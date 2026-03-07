@@ -37,46 +37,46 @@
   <view class="menu-section">
     <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="history">
-        <text class="icon menu-icon">\ue08d</text>
+        <text class="icon menu-icon">\ue08b</text>
         <text class="menu-item-text flex-1">观看历史</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="favorites">
-        <text class="icon menu-icon">\ue1c2</text>
+        <text class="icon menu-icon">\ue064</text>
         <text class="menu-item-text flex-1">我的收藏</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="likes">
-        <text class="icon menu-icon">\ue0f7</text>
+        <text class="icon menu-icon">\ue0f5</text>
         <text class="menu-item-text flex-1">我的点赞</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
     </view>
 
     <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="submit">
-        <text class="icon menu-icon">\ue1ee</text>
+        <text class="icon menu-icon">\ue19d</text>
         <text class="menu-item-text flex-1">提交作品</text>
         <view class="menu-badge">NEW</view>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="about">
-        <text class="icon menu-icon">\ue113</text>
+        <text class="icon menu-icon">\ue0fe</text>
         <text class="menu-item-text flex-1">关于AAFF</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="feedback">
-        <text class="icon menu-icon">\ue131</text>
+        <text class="icon menu-icon">\ue119</text>
         <text class="menu-item-text flex-1">意见反馈</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
     </view>
 
     <view class="menu-group">
       <view class="menu-item flex items-center" bindtap="goTo" data-page="settings">
-        <text class="icon menu-icon">\ue1a8</text>
+        <text class="icon menu-icon">\ue157</text>
         <text class="menu-item-text flex-1">设置</text>
-        <text class="icon menu-arrow">\ue079</text>
+        <text class="icon menu-arrow">\ue073</text>
       </view>
     </view>
   </view>

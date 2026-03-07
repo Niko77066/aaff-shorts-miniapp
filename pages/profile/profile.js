@@ -16,15 +16,15 @@ Page({
   },
 
   onLoad() {
-    var sysInfo = wx.getSystemInfoSync()
+    var windowInfo = wx.getWindowInfo()
     this.setData({
-      statusBarHeight: sysInfo.statusBarHeight
+      statusBarHeight: windowInfo.statusBarHeight
     })
   },
 
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
-      this.getTabBar().setData({ selected: 2 })
+      this.getTabBar().setData({ selected: 1 })
     }
 
     var userInfo = app.globalData.userInfo

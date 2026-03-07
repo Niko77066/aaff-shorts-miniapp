@@ -1,21 +1,16 @@
 Component({
   data: {
-    selected: 1,
+    selected: 0,
     list: [
       {
         pagePath: "/pages/index/index",
-        text: "发现",
-        icon: "\ue09b"
-      },
-      {
-        pagePath: "/pages/index/index",
         text: "榜单",
-        icon: "\ue04f"
+        icon: "\ue376"
       },
       {
         pagePath: "/pages/profile/profile",
         text: "我的",
-        icon: "\ue461"
+        icon: "\ue19e"
       }
     ]
   },

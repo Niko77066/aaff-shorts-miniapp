@@ -12,8 +12,8 @@ App({
   },
 
   onLaunch() {
-    const sysInfo = wx.getSystemInfoSync()
-    this.globalData.statusBarHeight = sysInfo.statusBarHeight
+    var windowInfo = wx.getWindowInfo()
+    this.globalData.statusBarHeight = windowInfo.statusBarHeight
 
     // Load Lucide icon font
     wx.loadFontFace({
@@ -30,14 +30,16 @@ App({
       family: 'Inter',
       source: 'url("https://fonts.gstatic.com/s/inter/v21/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.woff2")',
       desc: { weight: '400' },
-      success() { console.log('[font] Inter 400 loaded') }
+      success() { console.log('[font] Inter 400 loaded') },
+      fail(e) { console.warn('[font] Inter 400 failed', e) }
     })
     wx.loadFontFace({
       global: true,
       family: 'Inter',
       source: 'url("https://fonts.gstatic.com/s/inter/v21/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fAZ9hjQ.woff2")',
       desc: { weight: '700' },
-      success() { console.log('[font] Inter 700 loaded') }
+      success() { console.log('[font] Inter 700 loaded') },
+      fail(e) { console.warn('[font] Inter 700 failed', e) }
     })
   }
 })
