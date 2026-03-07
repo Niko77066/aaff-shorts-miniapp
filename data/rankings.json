@@ -12,7 +12,7 @@
       "upload_date": "20250418",
       "platform": "youtube",
       "source_url": "https://curiousrefuge.com/ai-film-gallery/the-cinema-that-never-was-ai-short-film",
-      "cover": "covers/the-cinema-that-never-was.jpg",
+      "cover": "/images/covers/the-cinema-that-never-was.jpg",
       "video": "videos/the-cinema-that-never-was.mp4",
       "slug": "the-cinema-that-never-was"
     },
@@ -28,7 +28,7 @@
       "upload_date": "20260302",
       "platform": "html5",
       "source_url": "https://www.youtube.com/watch?v=Ri--qqBtMD0",
-      "cover": "covers/more-tears-than-harm.jpg",
+      "cover": "/images/covers/more-tears-than-harm.jpg",
       "video": "videos/more-tears-than-harm.mp4",
       "slug": "more-tears-than-harm"
     },
@@ -44,7 +44,7 @@
       "upload_date": "20260203",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=8akkF_Ib7nY",
-      "cover": "covers/signwhat-comes-after-curiosity-ai-short-film.jpg",
+      "cover": "/images/covers/signwhat-comes-after-curiosity-ai-short-film.jpg",
       "video": "videos/signwhat-comes-after-curiosity-ai-short-film.mp4",
       "slug": "signwhat-comes-after-curiosity-ai-short-film"
     },
@@ -60,7 +60,7 @@
       "upload_date": "20260219",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=1H6dnWCuzno",
-      "cover": "covers/anhad.jpg",
+      "cover": "/images/covers/anhad.jpg",
       "video": "videos/anhad.mp4",
       "slug": "anhad"
     },
@@ -76,7 +76,7 @@
       "upload_date": "20250820",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=CN_iJQWVlhg",
-      "cover": "covers/the-ice빙氷.jpg",
+      "cover": "/images/covers/the-ice빙氷.jpg",
       "video": "videos/the-ice빙氷.mp4",
       "slug": "the-ice빙氷"
     },
@@ -92,7 +92,7 @@
       "upload_date": "20260113",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=NptAC_6J-ho",
-      "cover": "covers/ai-hua-吴爱花.jpg",
+      "cover": "/images/covers/ai-hua-吴爱花.jpg",
       "video": "videos/ai-hua-吴爱花.mp4",
       "slug": "ai-hua-吴爱花"
     },
@@ -108,7 +108,7 @@
       "upload_date": "20251125",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=2aPLqCwy1I4",
-      "cover": "covers/逛三园-garden-of-kin.jpg",
+      "cover": "/images/covers/逛三园-garden-of-kin.jpg",
       "video": "videos/逛三园-garden-of-kin.mp4",
       "slug": "逛三园-garden-of-kin"
     },
@@ -124,7 +124,7 @@
       "upload_date": "20251024",
       "platform": "bilibili",
       "source_url": "https://www.bilibili.com/video/BV1GXsjzEEmw/",
-      "cover": "covers/敢探极境.jpg",
+      "cover": "/images/covers/敢探极境.jpg",
       "video": "videos/敢探极境.mp4",
       "slug": "敢探极境"
     },
@@ -140,7 +140,7 @@
       "upload_date": "20251111",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=Cc5F57LHZrI",
-      "cover": "covers/the-trade.jpg",
+      "cover": "/images/covers/the-trade.jpg",
       "video": "videos/the-trade.mp4",
       "slug": "the-trade"
     },
@@ -156,7 +156,7 @@
       "upload_date": "20241222",
       "platform": "html5",
       "source_url": "https://www.youtube.com/watch?v=zpAeygE4d1A",
-      "cover": "covers/total-pixel-space.jpg",
+      "cover": "/images/covers/total-pixel-space.jpg",
       "video": "videos/total-pixel-space.mp4",
       "slug": "total-pixel-space"
     },
@@ -172,7 +172,7 @@
       "upload_date": "20241204",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=9pdN78LAOZY",
-      "cover": "covers/the-thin-man-the-gun-the-hotpot.jpg",
+      "cover": "/images/covers/the-thin-man-the-gun-the-hotpot.jpg",
       "video": "videos/the-thin-man-the-gun-the-hotpot.mp4",
       "slug": "the-thin-man-the-gun-the-hotpot"
     },
@@ -188,7 +188,7 @@
       "upload_date": "20250415",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=Wyf6bGvxses",
-      "cover": "covers/love-at-first-sight.jpg",
+      "cover": "/images/covers/love-at-first-sight.jpg",
       "video": "videos/love-at-first-sight.mp4",
       "slug": "love-at-first-sight"
     },
@@ -204,7 +204,7 @@
       "upload_date": "20251029",
       "platform": "html5",
       "source_url": "https://www.youtube.com/watch?v=SNXiTGAEyV4",
-      "cover": "covers/distance-between-two-points-of-me.jpg",
+      "cover": "/images/covers/distance-between-two-points-of-me.jpg",
       "video": "videos/distance-between-two-points-of-me.mp4",
       "slug": "distance-between-two-points-of-me"
     },
@@ -220,7 +220,7 @@
       "upload_date": "20250908",
       "platform": "html5",
       "source_url": "https://www.youtube.com/watch?v=LvrUoroTJpg",
-      "cover": "covers/rōhki-a-million-trillion-pathways.jpg",
+      "cover": "/images/covers/rōhki-a-million-trillion-pathways.jpg",
       "video": "videos/rōhki-a-million-trillion-pathways.mp4",
       "slug": "rōhki-a-million-trillion-pathways"
     },
@@ -236,7 +236,7 @@
       "upload_date": "20251126",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=bd9L_W6f3Ig",
-      "cover": "covers/railbound.jpg",
+      "cover": "/images/covers/railbound.jpg",
       "video": "videos/railbound.mp4",
       "slug": "railbound"
     },
@@ -252,7 +252,7 @@
       "upload_date": "20260216",
       "platform": "bilibili",
       "source_url": "https://www.bilibili.com/video/BV1HEZNBZE36/",
-      "cover": "covers/贾科长dance.jpg",
+      "cover": "/images/covers/贾科长dance.jpg",
       "video": "videos/贾科长dance.mp4",
       "slug": "贾科长dance"
     }
@@ -270,7 +270,7 @@
       "upload_date": "20260219",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=1H6dnWCuzno",
-      "cover": "covers/anhad.jpg",
+      "cover": "/images/covers/anhad.jpg",
       "video": "videos/anhad.mp4",
       "slug": "anhad"
     },
@@ -286,7 +286,7 @@
       "upload_date": "20260222",
       "platform": "bilibili",
       "source_url": "https://www.bilibili.com/video/BV1rKZYB6EQ7/",
-      "cover": "covers/马上好.jpg",
+      "cover": "/images/covers/马上好.jpg",
       "video": "videos/马上好.mp4",
       "slug": "马上好"
     },
@@ -302,7 +302,7 @@
       "upload_date": "20260219",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=EfaA_rq9nbA",
-      "cover": "covers/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.jpg",
+      "cover": "/images/covers/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.jpg",
       "video": "videos/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.mp4",
       "slug": "李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show"
     },
@@ -318,7 +318,7 @@
       "upload_date": "20260222",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=XkfvR8OIeio",
-      "cover": "covers/lil-wukong---500-winters.jpg",
+      "cover": "/images/covers/lil-wukong---500-winters.jpg",
       "video": "videos/lil-wukong---500-winters.mp4",
       "slug": "lil-wukong---500-winters"
     },
@@ -334,7 +334,7 @@
       "upload_date": "20260205",
       "platform": "twitter",
       "source_url": "https://x.com/Kling_ai/status/2019228615775604784?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2019228615775604784%7Ctwgr%5Ea1fe596f6df850eded117c72564d921e759fe9ab%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fcuriousrefuge.com%2Fai-film-gallery%2Fthe-biggest-lie-in-history-ai-mockumentary",
-      "cover": "covers/kling-30-登月伪纪录片广告.jpg",
+      "cover": "/images/covers/kling-30-登月伪纪录片广告.jpg",
       "video": "videos/kling-30-登月伪纪录片广告.mp4",
       "slug": "kling-30-登月伪纪录片广告"
     }
@@ -352,7 +352,7 @@
       "upload_date": "20260302",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=Ri--qqBtMD0",
-      "cover": "covers/more-tears-than-harm.jpg",
+      "cover": "/images/covers/more-tears-than-harm.jpg",
       "video": "videos/more-tears-than-harm.mp4",
       "slug": "more-tears-than-harm"
     },
@@ -368,7 +368,7 @@
       "upload_date": "20250820",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=CN_iJQWVlhg",
-      "cover": "covers/the-ice빙氷.jpg",
+      "cover": "/images/covers/the-ice빙氷.jpg",
       "video": "videos/the-ice빙氷.mp4",
       "slug": "the-ice빙氷"
     },
@@ -384,7 +384,7 @@
       "upload_date": "20251029",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=SNXiTGAEyV4",
-      "cover": "covers/distance-between-two-points-of-me.jpg",
+      "cover": "/images/covers/distance-between-two-points-of-me.jpg",
       "video": "videos/distance-between-two-points-of-me.mp4",
       "slug": "distance-between-two-points-of-me"
     },
@@ -400,7 +400,7 @@
       "upload_date": "20241112",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=nSCgdR6O-A8",
-      "cover": "covers/one-last-wish.jpg",
+      "cover": "/images/covers/one-last-wish.jpg",
       "video": "videos/one-last-wish.mp4",
       "slug": "one-last-wish"
     },
@@ -416,7 +416,7 @@
       "upload_date": "20241204",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=9pdN78LAOZY",
-      "cover": "covers/the-thin-man-the-gun-the-hotpot.jpg",
+      "cover": "/images/covers/the-thin-man-the-gun-the-hotpot.jpg",
       "video": "videos/the-thin-man-the-gun-the-hotpot.mp4",
       "slug": "the-thin-man-the-gun-the-hotpot"
     },
@@ -432,7 +432,7 @@
       "upload_date": "20251215",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=Pf_pxiz4Urc",
-      "cover": "covers/a-little-full.jpg",
+      "cover": "/images/covers/a-little-full.jpg",
       "video": "videos/a-little-full.mp4",
       "slug": "a-little-full"
     },
@@ -448,7 +448,7 @@
       "upload_date": "20250908",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=LvrUoroTJpg",
-      "cover": "covers/rōhki-a-million-trillion-pathways.jpg",
+      "cover": "/images/covers/rōhki-a-million-trillion-pathways.jpg",
       "video": "videos/rōhki-a-million-trillion-pathways.mp4",
       "slug": "rōhki-a-million-trillion-pathways"
     },
@@ -464,7 +464,7 @@
       "upload_date": "20250322",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=oMQ68NKddlc",
-      "cover": "covers/pi-in-the-sky.jpg",
+      "cover": "/images/covers/pi-in-the-sky.jpg",
       "video": "videos/pi-in-the-sky.mp4",
       "slug": "pi-in-the-sky"
     }
@@ -482,7 +482,7 @@
       "upload_date": "20260206",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=mEVl0NS0vu8",
-      "cover": "covers/thats-ai-2026---short-film.jpg",
+      "cover": "/images/covers/thats-ai-2026---short-film.jpg",
       "video": "videos/thats-ai-2026---short-film.mp4",
       "slug": "thats-ai-2026---short-film"
     },
@@ -498,7 +498,7 @@
       "upload_date": "20260219",
       "platform": "youtube",
       "source_url": "https://www.youtube.com/watch?v=EfaA_rq9nbA",
-      "cover": "covers/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.jpg",
+      "cover": "/images/covers/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.jpg",
       "video": "videos/李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show.mp4",
       "slug": "李白首次登上美国春晚-li-bai-at-the-super-bowl-halftime-show"
     }
