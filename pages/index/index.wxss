@@ -127,8 +127,8 @@
   justify-content: center;
 }
 /* Reference: w-5 h-5 strokeWidth 1.5, text-zinc-400 */
-.nav-icon-emoji {
-  font-size: 36rpx;
+.nav-icon {
+  font-size: 40rpx;
   color: #a1a1aa; /* text-zinc-400 */
 }
 

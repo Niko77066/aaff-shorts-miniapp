@@ -7,7 +7,7 @@
       bindtap="switchTab"
       data-index="{{index}}"
     >
-      <text class="tab-pill-item-icon {{selected === index ? 'tab-pill-item-icon-active' : ''}}">{{selected === index ? item.activeIcon : item.icon}}</text>
+      <text class="icon tab-pill-item-icon {{selected === index ? 'tab-pill-item-icon-active' : ''}}">{{item.icon}}</text>
       <text class="tab-pill-item-label {{selected === index ? 'tab-pill-item-label-active' : ''}}">{{item.text}}</text>
     </view>
   </view>
