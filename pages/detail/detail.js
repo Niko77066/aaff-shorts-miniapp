@@ -1,3 +1,41 @@
+const rankings = require('../../data/rankings.json')
+
+/* Color palette for related items */
+var RELATED_GRADIENTS = [
+  ['#db2777', '#f472b6'],
+  ['#ea580c', '#fb923c'],
+  ['#059669', '#34d399'],
+  ['#d97706', '#fbbf24'],
+  ['#4f46e5', '#818cf8']
+]
+
+function formatViews(n) {
+  if (n >= 10000) return (n / 10000).toFixed(1) + '万'
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'K'
+  return String(n)
+}
+
+function formatDuration(seconds) {
+  var s = Math.floor(seconds)
+  var m = Math.floor(s / 60)
+  var sec = s % 60
+  return m + ':' + ('0' + sec).slice(-2)
+}
+
+/* Find an item by slug across all rankings */
+function findBySlug(slug) {
+  var keys = Object.keys(rankings)
+  for (var k = 0; k < keys.length; k++) {
+    var list = rankings[keys[k]]
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].slug === slug) {
+        return { item: list[i], listName: keys[k], rank: list[i].rank }
+      }
+    }
+  }
+  return null
+}
+
 Page({
   data: {
     info: {},
@@ -5,49 +43,60 @@ Page({
   },
 
   onLoad(options) {
-    var id = options.id || 'top_0'
-    this.loadDetail(id)
+    var slug = options.id || ''
+    this.loadDetail(slug)
   },
 
-  loadDetail(id) {
-    var info = {
-      id: id,
-      title: '消逝的记忆 — 当AI学会遗忘',
-      coverGradient: 'linear-gradient(135deg, #7c3aed, #2563eb)',
-      author: 'CyberArt Studio',
-      authorInitial: 'C',
-      authorDesc: 'AI视觉艺术创作者 | 10.2万粉丝',
-      score: '9.5',
-      duration: '3:42',
-      playCountText: '32.8万',
-      likeCount: '2.1万',
-      commentCount: '3,652',
-      shareCount: '1,284',
-      tags: ['科幻', '剧情', '实验'],
-      aiTool: 'Sora',
-      aiModel: 'Sora v2.0',
-      rankPosition: 1,
-      rankListName: 'AI短片 · 周榜',
-      description: '在一个AI已经深度融入人类生活的近未来，主人公发现自己珍贵的记忆正在被逐渐"优化"。这部短片探讨了在人工智能时代，记忆、身份与人性之间的微妙关系。使用Sora生成的视觉效果营造出一种既熟悉又陌生的氛围，挑战观众对现实与虚拟边界的认知。'
+  loadDetail(slug) {
+    var result = findBySlug(slug)
+    if (!result) {
+      wx.showToast({ title: '未找到该作品', icon: 'none' })
+      return
     }
 
-    var relatedGradients = [
-      ['#db2777', '#f472b6'],
-      ['#ea580c', '#fb923c'],
-      ['#059669', '#34d399'],
-      ['#d97706', '#fbbf24'],
-      ['#4f46e5', '#818cf8']
-    ]
+    var item = result.item
+    var title = item.original_title || item.title
+    var author = item.author || ''
+
+    var info = {
+      id: item.slug,
+      title: title,
+      coverGradient: 'linear-gradient(135deg, #7c3aed, #2563eb)',
+      author: author,
+      authorInitial: author ? author[0] : '?',
+      authorDesc: item.platform ? '来自 ' + item.platform : '',
+      score: item.views ? formatViews(item.views) : '-',
+      duration: item.duration ? formatDuration(item.duration) : '-',
+      playCountText: item.views ? formatViews(item.views) : '-',
+      likeCount: item.likes ? formatViews(item.likes) : '-',
+      commentCount: '-',
+      shareCount: '-',
+      tags: [item.platform || 'AI'].filter(Boolean),
+      aiTool: '-',
+      aiModel: '-',
+      rankPosition: result.rank,
+      rankListName: result.listName,
+      description: item.description || '',
+      sourceUrl: item.source_url || '',
+      video: item.video || '',
+      cover: item.cover || ''
+    }
+
+    /* Build related items from same list */
+    var listItems = rankings[result.listName] || []
     var relatedItems = []
-    var titles = ['星际迷航2077', '最后一个画师', '数字花园', '虚拟黄昏', '机器之心']
-    for (var i = 0; i < 5; i++) {
-      relatedItems.push({
-        id: 'related_' + i,
-        title: titles[i],
-        gradientFrom: relatedGradients[i][0],
-        gradientTo: relatedGradients[i][1],
-        score: (9.3 - i * 0.2).toFixed(1)
-      })
+    for (var i = 0; i < listItems.length && relatedItems.length < 5; i++) {
+      if (listItems[i].slug !== slug) {
+        var ri = listItems[i]
+        var colors = RELATED_GRADIENTS[relatedItems.length % RELATED_GRADIENTS.length]
+        relatedItems.push({
+          id: ri.slug,
+          title: ri.original_title || ri.title,
+          gradientFrom: colors[0],
+          gradientTo: colors[1],
+          score: ri.views ? formatViews(ri.views) : '-'
+        })
+      }
     }
 
     this.setData({ info: info, relatedItems: relatedItems })
@@ -75,7 +124,16 @@ Page({
     }
   },
   onPlay() {
-    wx.showToast({ title: '播放功能开发中', icon: 'none' })
+    if (this.data.info.sourceUrl) {
+      wx.setClipboardData({
+        data: this.data.info.sourceUrl,
+        success: function() {
+          wx.showToast({ title: '链接已复制', icon: 'success' })
+        }
+      })
+    } else {
+      wx.showToast({ title: '播放功能开发中', icon: 'none' })
+    }
   },
   onShareAppMessage() {
     return {

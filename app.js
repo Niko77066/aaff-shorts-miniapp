@@ -3,20 +3,12 @@ App({
     userInfo: null,
     apiBase: 'https://api.aaff.com',
     statusBarHeight: 0,
-    categories: {
-      shorts: [
-        { id: 'weekly', name: '周榜', icon: '\ue0d2' },
-        { id: 'monthly', name: '月榜', icon: '\ue1c2' },
-        { id: 'annual', name: '年榜', icon: '\ue04f' },
-        { id: 'newbie', name: '新人榜', icon: '\ue1be' }
-      ],
-      drama: [
-        { id: 'weekly', name: '周榜', icon: '\ue0d2' },
-        { id: 'monthly', name: '月榜', icon: '\ue1c2' },
-        { id: 'annual', name: '年榜', icon: '\ue04f' },
-        { id: 'popular', name: '人气榜', icon: '\ue0f7' }
-      ]
-    }
+    categories: [
+      { id: 'annual', name: 'AAFF精选年榜' },
+      { id: 'monthly', name: '月榜' },
+      { id: 'animation', name: '动画榜' },
+      { id: 'weird', name: '怪就怪AI榜' }
+    ]
   },
 
   onLaunch() {

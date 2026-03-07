@@ -145,11 +145,12 @@
   display: flex;
   align-items: center;
   gap: 8rpx;           /* gap-2 → 8rpx */
-  padding: 10rpx 20rpx; /* py-2.5 px-5 → 10rpx 20rpx */
+  padding: 10rpx 16rpx; /* reduced for 4 tabs */
   border-radius: 999rpx; /* rounded-full */
-  font-size: 28rpx;     /* text-sm → 28rpx */
+  font-size: 26rpx;     /* slightly smaller for 4 tabs */
   font-weight: 500;      /* font-medium → 500 */
   transition: all 0.3s ease;
+  flex-shrink: 1;
 }
 .tab-pill-icon {
   font-size: 28rpx; /* w-4 h-4 icon → 28rpx for emoji */
