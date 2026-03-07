@@ -15,18 +15,8 @@
   <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
     <view class="nav-bar-fade"></view>
     <view class="nav-bar-inner">
-      <!-- Left: Logo + Brand -->
       <view class="nav-left flex items-center">
         <text class="nav-brand">AAFF</text>
-      </view>
-      <!-- Right: Search + Bell -->
-      <view class="nav-right flex items-center">
-        <view class="nav-icon-btn" bindtap="">
-          <text class="nav-icon-text" style="letter-spacing:0;">⌕</text>
-        </view>
-        <view class="nav-icon-btn" bindtap="">
-          <text class="nav-icon-text" style="letter-spacing:0;">⋯</text>
-        </view>
       </view>
     </view>
 
