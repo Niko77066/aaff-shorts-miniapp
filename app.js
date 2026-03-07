@@ -5,16 +5,16 @@ App({
     statusBarHeight: 0,
     categories: {
       shorts: [
-        { id: 'weekly', name: '周榜', icon: '🔥' },
-        { id: 'monthly', name: '月榜', icon: '🌟' },
-        { id: 'annual', name: '年榜', icon: '🏆' },
-        { id: 'newbie', name: '新人榜', icon: '🌱' }
+        { id: 'weekly', name: '周榜', icon: '\ue0d2' },
+        { id: 'monthly', name: '月榜', icon: '\ue1c2' },
+        { id: 'annual', name: '年榜', icon: '\ue04f' },
+        { id: 'newbie', name: '新人榜', icon: '\ue1be' }
       ],
       drama: [
-        { id: 'weekly', name: '周榜', icon: '🔥' },
-        { id: 'monthly', name: '月榜', icon: '🌟' },
-        { id: 'annual', name: '年榜', icon: '🏆' },
-        { id: 'popular', name: '人气榜', icon: '❤' }
+        { id: 'weekly', name: '周榜', icon: '\ue0d2' },
+        { id: 'monthly', name: '月榜', icon: '\ue1c2' },
+        { id: 'annual', name: '年榜', icon: '\ue04f' },
+        { id: 'popular', name: '人气榜', icon: '\ue0f7' }
       ]
     }
   },

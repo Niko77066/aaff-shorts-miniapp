@@ -38,7 +38,7 @@
 .play-btn-icon {
   font-size: 42rpx;
   color: #FFFFFF;
-  margin-left: 8rpx;
+  margin-left: 4rpx;
 }
 .player-duration {
   position: absolute;
@@ -239,7 +239,10 @@
   border: 2rpx solid rgba(251, 191, 36, 0.15);
 }
 .ranking-medal { margin-right: 18rpx; }
-.medal-emoji { font-size: 48rpx; }
+.medal-emoji {
+  font-size: 48rpx;
+  color: var(--color-gold);
+}
 .ranking-position {
   font-size: var(--font-md);
   font-weight: 800;
@@ -251,9 +254,8 @@
   margin-top: 4rpx;
 }
 .ranking-arrow {
-  font-size: var(--font-2xl);
+  font-size: 32rpx;
   color: var(--color-text-tertiary);
-  font-weight: 300;
 }
 
 /* Related */
@@ -335,4 +337,9 @@
   color: #FFFFFF;
   font-size: var(--font-md);
   font-weight: 800;
+}
+.action-primary-icon {
+  color: #FFFFFF;
+  font-size: 28rpx;
+  margin-right: 8rpx;
 }

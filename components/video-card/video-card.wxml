@@ -7,7 +7,7 @@
     <view class="cover-overlay">
       <view class="duration-badge" wx:if="{{item.duration}}">{{item.duration}}</view>
       <view class="play-badge flex items-center" wx:if="{{item.playCountText}}">
-        <text class="play-tri">▶</text>
+        <text class="icon play-tri">\ue13c</text>
         <text class="play-num">{{item.playCountText}}</text>
       </view>
     </view>

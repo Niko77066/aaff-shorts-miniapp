@@ -38,7 +38,7 @@ var featuredDrama = {
 function getApprovalColor(value) {
   if (value >= 95) return '#f43f5e'
   if (value >= 90) return '#f59e0b'
-  return '#60a5fa'
+  return '#3b82f6'
 }
 
 Page({

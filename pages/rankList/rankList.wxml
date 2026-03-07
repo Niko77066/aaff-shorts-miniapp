@@ -22,7 +22,7 @@
     <text class="stats-text">共 {{totalCount}} 部作品</text>
     <view class="sort-btn flex items-center" bindtap="toggleSort">
       <text class="sort-text">{{sortLabel}}</text>
-      <text class="sort-arrow">↕</text>
+      <text class="icon sort-arrow">\ue035</text>
     </view>
   </view>
 

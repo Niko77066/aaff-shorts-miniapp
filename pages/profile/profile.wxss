@@ -104,9 +104,10 @@
   border-bottom: none;
 }
 .menu-icon {
-  font-size: 32rpx;
+  font-size: 36rpx;
   margin-right: 20rpx;
   flex-shrink: 0;
+  color: var(--color-text-secondary);
 }
 .menu-item-text {
   font-size: var(--font-base);
@@ -123,9 +124,8 @@
   margin-right: 12rpx;
 }
 .menu-arrow {
-  font-size: var(--font-xl);
+  font-size: 32rpx;
   color: var(--color-text-tertiary);
-  font-weight: 300;
 }
 
 /* Version */

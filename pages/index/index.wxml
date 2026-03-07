@@ -17,7 +17,6 @@
     <view class="nav-bar-inner">
       <!-- Left: Logo + Brand -->
       <view class="nav-left flex items-center">
-        <view class="nav-logo-mark">A</view>
         <text class="nav-brand">AAFF</text>
       </view>
       <!-- Right: Search + Bell -->

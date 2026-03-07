@@ -67,5 +67,4 @@
 .tab-pill-item-label-active {
   color: #FFFFFF;
   font-weight: 500;
-  text-shadow: 0 0 16rpx rgba(255, 255, 255, 0.5);
 }
