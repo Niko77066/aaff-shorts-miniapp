@@ -39,6 +39,7 @@
         bindtap="switchMainTab"
         data-index="{{index}}"
       >
+        <text class="icon tab-pill-icon">{{tabIcons[index]}}</text>
         <text class="tab-pill-label">{{item}}</text>
       </view>
     </view>
@@ -56,6 +57,7 @@
     refresher-enabled
     bindrefresherrefresh="onRefresh"
     refresher-triggered="{{refreshing}}"
+    bindscrolltolower="onLoadMore"
   >
     <!-- Main content: flex-1 px-4 pt-2 → flex flex-col gap-4 -->
     <view class="content-wrapper">
@@ -82,7 +84,7 @@
 
     <!-- Section Title -->
     <view class="section-title flex items-center justify-between">
-      <text class="section-title-text">{{tabs[activeMainTab]}}</text>
+      <text class="section-title-text">{{tabs[activeMainTab]}} 排行榜</text>
       <text class="section-title-badge">TOP {{rankItems.length}}</text>
     </view>
 
@@ -99,7 +101,7 @@
           <view class="podium-name-bubble">
             <text class="podium-name">{{podiumItems[1].author}}</text>
           </view>
-          <text class="podium-score podium-score-silver">{{podiumItems[1].score}}</text>
+          <text class="podium-score podium-score-silver">{{podiumItems[1].score}}分</text>
         </view>
         <view class="podium-pillar pillar-silver">
           <view class="pillar-shine"></view>
@@ -119,7 +121,7 @@
           <view class="podium-name-bubble">
             <text class="podium-name">{{podiumItems[0].author}}</text>
           </view>
-          <text class="podium-score podium-score-gold">{{podiumItems[0].score}}</text>
+          <text class="podium-score podium-score-gold">{{podiumItems[0].score}}分</text>
         </view>
         <view class="podium-pillar pillar-gold">
           <view class="pillar-shine"></view>
@@ -138,7 +140,7 @@
           <view class="podium-name-bubble">
             <text class="podium-name">{{podiumItems[2].author}}</text>
           </view>
-          <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}</text>
+          <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}分</text>
         </view>
         <view class="podium-pillar pillar-bronze">
           <view class="pillar-shine"></view>
@@ -184,20 +186,28 @@
 
           <!-- Stats Row -->
           <view class="lb-stats flex items-center">
+            <!-- Approval Badge -->
+            <view class="progress-wrap flex items-center">
+              <view class="approval-badge" style="border-color: {{item.approvalColor}};">
+                <text class="approval-num" style="color: {{item.approvalColor}};">{{item.approval}}</text>
+              </view>
+              <text class="progress-label">好评率</text>
+            </view>
+
             <view class="stats-info flex flex-col">
               <view class="stat-line flex items-center">
                 <text class="icon stat-icon-fire">\ue0d2</text>
-                <text class="stat-text-light">{{item.views}} 播放</text>
+                <text class="stat-text-light">评分 {{item.score}}</text>
               </view>
               <view class="stat-line flex items-center">
                 <text class="icon stat-icon-play">\ue13c</text>
-                <text class="stat-text-dim">时长 {{item.score}}</text>
+                <text class="stat-text-dim">播放 {{item.views}}</text>
               </view>
             </view>
 
-            <!-- Platform -->
-            <view class="lb-tags flex" wx:if="{{item.platform}}">
-              <text class="lb-tag">{{item.platform}}</text>
+            <!-- Tags -->
+            <view class="lb-tags flex">
+              <text class="lb-tag" wx:for="{{item.tags}}" wx:key="*this" wx:for-item="tag">{{tag}}</text>
             </view>
           </view>
 

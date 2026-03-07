@@ -40,12 +40,39 @@ function formatDuration(seconds) {
   return m + ':' + ('0' + sec).slice(-2)
 }
 
+function getApprovalColor(value) {
+  if (value >= 95) return '#f43f5e'
+  if (value >= 90) return '#f59e0b'
+  return '#3b82f6'
+}
+
+/* Generate a synthetic approval rating from views + likes */
+function calcApproval(item) {
+  if (item.likes && item.views && item.views > 0) {
+    var raw = Math.min(99, Math.round(80 + (item.likes / item.views) * 500))
+    return raw
+  }
+  return Math.floor(85 + Math.random() * 14) // 85-98 fallback
+}
+
+/* Generate tags from platform + duration */
+function genTags(item) {
+  var tags = []
+  if (item.platform === 'youtube') tags.push('YouTube')
+  else if (item.platform === 'bilibili') tags.push('B站')
+  else if (item.platform) tags.push(item.platform)
+  if (item.duration > 300) tags.push('长片')
+  else if (item.duration > 0) tags.push('短片')
+  return tags
+}
+
 Page({
   data: {
     statusBarHeight: 0,
     navHeight: 0,
     tabs: ['年榜', '月榜', '动画榜', '怪就怪AI'],
     tabKeys: ['AAFF精选年榜', '月榜', '动画榜', '怪就怪AI榜'],
+    tabIcons: ['\ue0d0', '\ue29b', '\ue0d0', '\ue29b'],
     activeMainTab: 0,
     featured: null,
     podiumItems: [],
@@ -114,14 +141,18 @@ Page({
     /* Build rank items (all) */
     var rankItems = items.map(function(item, i) {
       var colors = GRADIENT_COLORS[i % GRADIENT_COLORS.length]
+      var approval = calcApproval(item)
       return {
         id: item.slug,
         rank: i + 1,
         title: item.original_title || item.title,
         author: item.author,
         score: item.duration ? formatDuration(item.duration) : '',
+        approval: approval,
+        approvalColor: getApprovalColor(approval),
         views: item.views ? formatViews(item.views) : '-',
         description: item.description || '',
+        tags: genTags(item),
         platform: item.platform || '',
         cover: item.cover || '',
         gradientFrom: colors[0],
