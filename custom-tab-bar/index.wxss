@@ -1,62 +1,71 @@
-/* Custom Tab Bar — Floating Pill (Reference Design) */
+/* Custom Tab Bar — Floating Pill
+   Pixel-perfect translation from App.tsx bottom nav */
 
+/* Reference: fixed bottom-8 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 pb-safe */
 .tab-bar-wrap {
   position: fixed;
-  bottom: 32rpx;
+  bottom: 64rpx; /* bottom-8 → 64rpx */
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 50;
   display: flex;
   justify-content: center;
   pointer-events: none;
-  padding: 0 60rpx;
+  padding: 0 16rpx; /* px-4 → 16rpx */
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+/* Reference: bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-3.5 flex gap-10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] pointer-events-auto */
 .tab-bar-pill {
   display: flex;
   align-items: center;
-  gap: 48rpx;
-  background: rgba(28, 28, 30, 0.80);
-  -webkit-backdrop-filter: blur(40px);
-  backdrop-filter: blur(40px);
-  border: 1rpx solid rgba(255, 255, 255, 0.10);
-  border-radius: 999rpx;
-  padding: 14rpx 48rpx;
-  box-shadow: 0 20rpx 80rpx rgba(0, 0, 0, 0.5);
+  gap: 40rpx; /* gap-10 → 40rpx */
+  background: rgba(28, 28, 30, 0.80); /* bg-[#1c1c1e]/80 */
+  -webkit-backdrop-filter: blur(80rpx); /* backdrop-blur-2xl → 80rpx */
+  backdrop-filter: blur(80rpx);
+  border: 2rpx solid rgba(255, 255, 255, 0.10); /* border-white/10 */
+  border-radius: 999rpx; /* rounded-full */
+  padding: 14rpx 32rpx; /* py-3.5 px-8 → 14rpx 32rpx */
+  box-shadow: 0 20rpx 80rpx rgba(0, 0, 0, 0.5); /* shadow-[0_10px_40px_rgba(0,0,0,0.5)] */
   pointer-events: auto;
 }
 
+/* Reference: flex flex-col items-center gap-1 w-12 group */
 .tab-pill-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rpx;
-  min-width: 80rpx;
+  gap: 4rpx; /* gap-1 → 4rpx */
+  width: 96rpx; /* w-12 → 96rpx */
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* Reference: w-6 h-6 icon, inactive: text-zinc-500 */
 .tab-pill-item-icon {
-  font-size: 40rpx;
-  opacity: 0.4;
-  transition: opacity 0.3s, transform 0.3s;
+  font-size: 48rpx; /* w-6 h-6 → 48rpx */
+  color: #71717a; /* text-zinc-500 */
+  transition: all 0.3s ease;
 }
 
+/* Reference: active: text-white scale-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] */
 .tab-pill-item-icon-active {
-  opacity: 1;
+  color: #FFFFFF;
   transform: scale(1.1);
+  text-shadow: 0 0 16rpx rgba(255, 255, 255, 0.5);
 }
 
+/* Reference: text-[9px] font-medium tracking-wider, inactive: text-zinc-500 */
 .tab-pill-item-label {
-  font-size: 18rpx;
-  color: #71717a;
-  font-weight: 500;
-  letter-spacing: 2rpx;
-  transition: color 0.3s;
+  font-size: 18rpx; /* text-[9px] → 18rpx */
+  color: #71717a; /* text-zinc-500 */
+  font-weight: 500; /* font-medium → 500 */
+  letter-spacing: 3rpx; /* tracking-wider → 3rpx */
+  transition: color 0.3s ease;
 }
 
+/* Reference: active: text-white */
 .tab-pill-item-label-active {
   color: #FFFFFF;
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: 0 0 16rpx rgba(255, 255, 255, 0.5);
 }

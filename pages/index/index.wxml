@@ -66,6 +66,8 @@
     refresher-triggered="{{refreshing}}"
     bindscrolltolower="onLoadMore"
   >
+    <!-- Main content: flex-1 px-4 pt-2 → flex flex-col gap-4 -->
+    <view class="content-wrapper">
     <!-- Hero Banner -->
     <view class="hero-banner-section" wx:if="{{featured}}">
       <view class="hero-banner">
@@ -97,15 +99,17 @@
     <view class="podium flex items-end justify-center" wx:if="{{podiumItems.length >= 3}}">
       <!-- Rank 2 -->
       <view class="podium-item podium-item-2 flex flex-col items-center">
-        <view class="podium-avatar-ring podium-ring-silver">
-          <view class="podium-avatar-inner">
-            <text class="podium-avatar-letter">{{podiumItems[1].author[0]}}</text>
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <view class="podium-avatar-ring podium-ring-silver">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[1].author[0]}}</text>
+            </view>
           </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[1].author}}</text>
+          </view>
+          <text class="podium-score podium-score-silver">{{podiumItems[1].score}}分</text>
         </view>
-        <view class="podium-name-bubble">
-          <text class="podium-name">{{podiumItems[1].author}}</text>
-        </view>
-        <text class="podium-score podium-score-silver">{{podiumItems[1].score}}分</text>
         <view class="podium-pillar pillar-silver">
           <view class="pillar-shine"></view>
           <text class="pillar-rank">2</text>
@@ -114,16 +118,18 @@
 
       <!-- Rank 1 -->
       <view class="podium-item podium-item-1 flex flex-col items-center">
-        <text class="podium-crown">\uD83D\uDC51</text>
-        <view class="podium-avatar-ring podium-ring-gold">
-          <view class="podium-avatar-inner">
-            <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <text class="podium-crown">👑</text>
+          <view class="podium-avatar-ring podium-ring-gold">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[0].author[0]}}</text>
+            </view>
           </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[0].author}}</text>
+          </view>
+          <text class="podium-score podium-score-gold">{{podiumItems[0].score}}分</text>
         </view>
-        <view class="podium-name-bubble">
-          <text class="podium-name">{{podiumItems[0].author}}</text>
-        </view>
-        <text class="podium-score podium-score-gold">{{podiumItems[0].score}}分</text>
         <view class="podium-pillar pillar-gold">
           <view class="pillar-shine"></view>
           <text class="pillar-rank">1</text>
@@ -132,15 +138,17 @@
 
       <!-- Rank 3 -->
       <view class="podium-item podium-item-3 flex flex-col items-center">
-        <view class="podium-avatar-ring podium-ring-bronze">
-          <view class="podium-avatar-inner">
-            <text class="podium-avatar-letter">{{podiumItems[2].author[0]}}</text>
+        <view class="podium-avatar-area relative flex flex-col items-center">
+          <view class="podium-avatar-ring podium-ring-bronze">
+            <view class="podium-avatar-inner">
+              <text class="podium-avatar-letter">{{podiumItems[2].author[0]}}</text>
+            </view>
           </view>
+          <view class="podium-name-bubble">
+            <text class="podium-name">{{podiumItems[2].author}}</text>
+          </view>
+          <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}分</text>
         </view>
-        <view class="podium-name-bubble">
-          <text class="podium-name">{{podiumItems[2].author}}</text>
-        </view>
-        <text class="podium-score podium-score-bronze">{{podiumItems[2].score}}分</text>
         <view class="podium-pillar pillar-bronze">
           <view class="pillar-shine"></view>
           <text class="pillar-rank">3</text>
@@ -219,6 +227,7 @@
         </view>
       </view>
     </view>
+    </view> <!-- end content-wrapper -->
 
     <!-- Load More -->
     <view class="load-more-area" wx:if="{{hasMore}}">
