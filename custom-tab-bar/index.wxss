@@ -1,70 +1,45 @@
-/* Custom Tab Bar — Floating Pill
-   Pixel-perfect translation from App.tsx bottom nav */
-
-/* Reference: fixed bottom-8 left-0 right-0 z-50 flex justify-center pointer-events-none px-4 pb-safe */
-.tab-bar-wrap {
+/* Custom Tab Bar */
+.tab-bar {
   position: fixed;
-  bottom: 64rpx; /* bottom-8 → 64rpx */
+  bottom: 0;
   left: 0;
   right: 0;
-  z-index: 50;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-  padding: 0 16rpx; /* px-4 → 16rpx */
-  padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* Reference: bg-[#1c1c1e]/80 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-3.5 flex gap-10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] pointer-events-auto */
-.tab-bar-pill {
+  height: 120rpx;
   display: flex;
   align-items: center;
-  gap: 40rpx; /* gap-10 → 40rpx */
-  background: rgba(28, 28, 30, 0.80); /* bg-[#1c1c1e]/80 */
-  -webkit-backdrop-filter: blur(80rpx); /* backdrop-blur-2xl → 80rpx */
-  backdrop-filter: blur(80rpx);
-  border: 2rpx solid rgba(255, 255, 255, 0.10); /* border-white/10 */
-  border-radius: 999rpx; /* rounded-full */
-  padding: 14rpx 32rpx; /* py-3.5 px-8 → 14rpx 32rpx */
-  box-shadow: 0 20rpx 80rpx rgba(0, 0, 0, 0.5); /* shadow-[0_10px_40px_rgba(0,0,0,0.5)] */
-  pointer-events: auto;
+  justify-content: center;
+  gap: 80rpx;
+  background: rgba(10, 15, 20, 0.92);
+  backdrop-filter: blur(32rpx);
+  -webkit-backdrop-filter: blur(32rpx);
+  border-top: 1rpx solid rgba(48, 54, 61, 0.5);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 100;
 }
 
-/* Reference: flex flex-col items-center gap-1 w-12 group */
-.tab-pill-item {
+.tab-bar-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rpx; /* gap-1 → 4rpx */
-  width: 96rpx; /* w-12 → 96rpx */
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  gap: 4rpx;
 }
 
-/* Reference: w-6 h-6 icon, inactive: text-zinc-500 */
-.tab-pill-item-icon {
-  font-size: 48rpx; /* w-6 h-6 → 48rpx */
-  color: #484F58; /* text-tertiary */
-  transition: all 0.3s ease;
+.tab-bar-icon-text {
+  font-size: 40rpx;
+  color: #484F58;
+  line-height: 1;
 }
 
-/* Reference: active: text-white scale-110 drop-shadow-[0_0_8px_rgba(0,168,150,0.5)] */
-.tab-pill-item-icon-active {
-  color: #00C9B0;
-  transform: scale(1.1);
-  text-shadow: 0 0 16rpx rgba(0, 168, 150, 0.5);
-}
-
-/* Reference: text-[9px] font-medium tracking-wider, inactive: text-zinc-500 */
-.tab-pill-item-label {
-  font-size: 18rpx; /* text-[9px] → 18rpx */
-  color: #484F58; /* text-tertiary */
-  font-weight: 500; /* font-medium → 500 */
-  letter-spacing: 3rpx; /* tracking-wider → 3rpx */
-  transition: color 0.3s ease;
-}
-
-/* Reference: active: text-white */
-.tab-pill-item-label-active {
-  color: #E6EDF3;
+.tab-bar-label {
+  font-size: 20rpx;
+  color: #484F58;
   font-weight: 500;
+}
+
+.tab-bar-item.active .tab-bar-icon-text {
+  color: #00A896;
+}
+
+.tab-bar-item.active .tab-bar-label {
+  color: #00A896;
 }

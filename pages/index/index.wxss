@@ -1019,3 +1019,40 @@
   color: #00C9B0;
   font-weight: 600;
 }
+
+/* Hero banner cover image */
+.hero-banner-cover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Hero play triangle (replaces Lucide icon) */
+.hero-play-tri {
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 12rpx 0 12rpx 20rpx;
+  border-color: transparent transparent transparent #fff;
+  margin-left: 4rpx;
+}
+
+/* Nav icon text (replaces Lucide) */
+.nav-icon-text {
+  font-size: 32rpx;
+  color: #8B949E;
+}
+
+/* Podium crown text (replaces Lucide) */
+.podium-crown-text {
+  font-size: 36rpx;
+  color: #FFB800;
+  margin-bottom: 4rpx;
+}
+
+/* Tab bar icon text */
+.tab-bar-icon-text {
+  font-size: 36rpx;
+  line-height: 1;
+}

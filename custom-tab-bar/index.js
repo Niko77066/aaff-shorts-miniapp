@@ -5,16 +5,15 @@ Component({
       {
         pagePath: "/pages/index/index",
         text: "榜单",
-        icon: "\ue376"
+        iconText: "☰"
       },
       {
         pagePath: "/pages/profile/profile",
         text: "我的",
-        icon: "\ue19e"
+        iconText: "⊙"
       }
     ]
   },
-
   methods: {
     switchTab(e) {
       var index = e.currentTarget.dataset.index

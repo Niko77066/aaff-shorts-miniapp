@@ -72,7 +72,7 @@ Page({
     navHeight: 0,
     tabs: ['年榜', '月榜', '动画榜', '怪就怪AI'],
     tabKeys: ['AAFF精选年榜', '月榜', '动画榜', '怪就怪AI榜'],
-    tabIcons: ['\ue053', '\ue067', '\ue085', '\ue416'],
+    tabIcons: ['', '', '', ''],
     activeMainTab: 0,
     featured: null,
     podiumItems: [],
@@ -167,7 +167,8 @@ Page({
       author: first.author || '',
       badge: this.data.tabs[this.data.activeMainTab] + ' TOP 1',
       description: first.description || '',
-      gradient: HERO_GRADIENTS[this.data.activeMainTab % HERO_GRADIENTS.length]
+      gradient: HERO_GRADIENTS[this.data.activeMainTab % HERO_GRADIENTS.length],
+      cover: first.cover || ''
     } : null
 
     this.setData({
