@@ -4,14 +4,30 @@
   <view class="profile-header" style="padding-top: {{statusBarHeight + 20}}px;">
     <!-- User Info -->
     <view class="user-section flex flex-col items-center">
-      <view class="avatar-wrap" bindtap="onAvatarTap">
-        <image class="user-avatar" src="{{userInfo.avatar}}" mode="aspectFill" wx:if="{{userInfo.avatar}}"></image>
-        <view class="user-avatar-placeholder" wx:else>
-          <text class="avatar-letter">U</text>
+      <!-- 未登录：用微信官方「获取头像/昵称」规范 -->
+      <block wx:if="{{!userInfo.name}}">
+        <button class="avatar-btn" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <view class="avatar-wrap">
+            <image class="user-avatar" src="{{userInfo.avatar}}" mode="aspectFill" wx:if="{{userInfo.avatar}}"></image>
+            <view class="user-avatar-placeholder" wx:else>
+              <text class="avatar-letter">+</text>
+            </view>
+          </view>
+        </button>
+        <input class="nickname-input" type="nickname" placeholder="点击填写昵称" bindblur="onNicknameInput" value="{{userInfo.name}}" />
+        <text class="user-desc">昵称和头像仅本地保存</text>
+      </block>
+      <!-- 已登录 -->
+      <block wx:else>
+        <view class="avatar-wrap">
+          <image class="user-avatar" src="{{userInfo.avatar}}" mode="aspectFill" wx:if="{{userInfo.avatar}}"></image>
+          <view class="user-avatar-placeholder" wx:else>
+            <text class="avatar-letter">{{userInfo.name[0] || 'U'}}</text>
+          </view>
         </view>
-      </view>
-      <text class="user-name">{{userInfo.name || '点击登录'}}</text>
-      <text class="user-desc">{{userInfo.desc || 'AI视频爱好者'}}</text>
+        <text class="user-name">{{userInfo.name}}</text>
+        <text class="user-desc">{{userInfo.desc || 'AI视频爱好者'}}</text>
+      </block>
     </view>
 
     <!-- Stats Row -->
@@ -62,7 +78,7 @@
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="about">
         <text class="menu-icon-text" style="margin-right:12rpx;">ⓘ</text>
-        <text class="menu-item-text flex-1">关于AAFF</text>
+        <text class="menu-item-text flex-1">关于 Arklink</text>
         <text class="menu-arrow-text" style="margin-left:8rpx;">›</text>
       </view>
       <view class="menu-item flex items-center" bindtap="goTo" data-page="feedback">
@@ -83,6 +99,6 @@
 
   <!-- Version -->
   <view class="version-text text-center">
-    <text class="version">AAFF AI视频榜 v1.0.0</text>
+    <text class="version">Arklink 方舟AI v1.0.0</text>
   </view>
 </view>

@@ -1,5 +1,5 @@
 <!--
-  AAFF AI Video Rankings - Index Page
+  Arklink 方舟AI - Index Page
   Reference Design: AI Studio (floating pill nav, hero banner, podium)
 -->
 <view class="page">
@@ -16,7 +16,7 @@
     <view class="nav-bar-fade"></view>
     <view class="nav-bar-inner">
       <view class="nav-left flex items-center">
-        <text class="nav-brand">AAFF</text>
+        <text class="nav-brand">Arklink 方舟AI</text>
       </view>
     </view>
 

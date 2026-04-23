@@ -2,13 +2,31 @@
 <view class="page-detail">
   <!-- Video Player Area -->
   <view class="player-area">
-    <view class="player-cover-gradient" style="background: {{info.coverGradient}};"></view>
-    <view class="player-overlay flex items-center justify-center">
-      <view class="play-btn-large">
-        <text class="play-btn-text" style="margin-right:4rpx;">▶</text>
+    <block wx:if="{{isPlaying && info.video}}">
+      <video
+        id="videoPlayer"
+        class="player-video"
+        src="{{info.video}}"
+        poster="{{info.cover}}"
+        autoplay="{{true}}"
+        controls="{{true}}"
+        show-center-play-btn="{{false}}"
+        object-fit="contain"
+        enable-progress-gesture="{{true}}"
+        bindplay="onVideoPlay"
+        binderror="onVideoError"
+      ></video>
+    </block>
+    <block wx:else>
+      <image wx:if="{{info.cover}}" class="player-cover-image" src="{{info.cover}}" mode="aspectFill"></image>
+      <view wx:else class="player-cover-gradient" style="background: {{info.coverGradient}};"></view>
+      <view class="player-overlay flex items-center justify-center" bindtap="onPlay">
+        <view class="play-btn-large">
+          <text class="play-btn-text" style="margin-right:4rpx;">▶</text>
+        </view>
       </view>
-    </view>
-    <view class="player-duration">{{info.duration}}</view>
+      <view class="player-duration">{{info.duration}}</view>
+    </block>
   </view>
 
   <!-- Info Section -->

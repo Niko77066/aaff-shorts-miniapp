@@ -22,6 +22,24 @@
   z-index: 1;
   padding: 48rpx 0 0;
 }
+.avatar-btn {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  line-height: 1;
+  border: none;
+}
+.avatar-btn::after { border: none; }
+.nickname-input {
+  margin-top: 20rpx;
+  padding: 12rpx 24rpx;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 32rpx;
+  color: #E6F0EE;
+  font-size: 28rpx;
+  text-align: center;
+  min-width: 300rpx;
+}
 .avatar-wrap {
   width: 140rpx;
   height: 140rpx;

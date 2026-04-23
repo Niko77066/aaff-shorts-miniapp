@@ -20,6 +20,13 @@ Page({
     this.setData({
       statusBarHeight: windowInfo.statusBarHeight
     })
+    try {
+      var saved = wx.getStorageSync('userInfo')
+      if (saved && saved.name) {
+        this.setData({ userInfo: saved })
+        if (app && app.globalData) app.globalData.userInfo = saved
+      }
+    } catch (e) {}
   },
 
   onShow() {
@@ -34,30 +41,41 @@ Page({
   },
 
   onAvatarTap() {
-    if (this.data.userInfo.name) return
+    // 已登录不做事
+  },
 
-    wx.getUserProfile({
-      desc: '用于完善个人资料',
-      success: function(res) {
-        var userInfo = {
-          name: res.userInfo.nickName,
-          avatar: res.userInfo.avatarUrl,
-          desc: 'AI视频爱好者'
-        }
-        app.globalData.userInfo = userInfo
-        this.setData({ userInfo: userInfo })
-      }.bind(this),
-      fail: function() {
-        wx.showToast({ title: '登录已取消', icon: 'none' })
-      }
-    })
+  onChooseAvatar(e) {
+    var avatarUrl = e.detail.avatarUrl
+    var current = this.data.userInfo || {}
+    var next = {
+      name: current.name || '',
+      avatar: avatarUrl,
+      desc: current.desc || 'AI视频爱好者'
+    }
+    this.setData({ userInfo: next })
+    try { wx.setStorageSync('userInfo', next) } catch (e) {}
+    if (app && app.globalData) app.globalData.userInfo = next
+  },
+
+  onNicknameInput(e) {
+    var name = (e.detail.value || '').trim()
+    if (!name) return
+    var current = this.data.userInfo || {}
+    var next = {
+      name: name,
+      avatar: current.avatar || '',
+      desc: current.desc || 'AI视频爱好者'
+    }
+    this.setData({ userInfo: next })
+    try { wx.setStorageSync('userInfo', next) } catch (e) {}
+    if (app && app.globalData) app.globalData.userInfo = next
   },
 
   goTo(e) {
     var page = e.currentTarget.dataset.page
     var pageMap = {
       submit: '提交作品',
-      about: '关于AAFF',
+      about: '关于 Arklink',
       feedback: '意见反馈',
       settings: '设置',
       history: '观看历史',

@@ -1,5 +1,5 @@
 const app = getApp()
-const rankings = require('../../data/rankings.js')
+const dataLoader = require('../../utils/data-loader.js')
 
 /* Color palette for CSS gradient backgrounds (no external images) */
 var GRADIENT_COLORS = [
@@ -78,7 +78,10 @@ Page({
     podiumItems: [],
     rankItems: [],
     refreshing: false,
-    hasMore: false
+    hasMore: false,
+    loading: true,
+    loadError: false,
+    rankings: null
   },
 
   onLoad() {
@@ -105,7 +108,7 @@ Page({
     if (index === this.data.activeMainTab) return
 
     this.setData({ activeMainTab: index })
-    this.loadData()
+    this.renderTab()
   },
 
   goToDetail(e) {
@@ -116,11 +119,15 @@ Page({
   },
 
   onRefresh() {
-    this.setData({ refreshing: true })
-    setTimeout(function() {
-      this.loadData()
-      this.setData({ refreshing: false })
-    }.bind(this), 600)
+    var self = this
+    self.setData({ refreshing: true })
+    dataLoader.loadRankings({ force: true }).then(function(data) {
+      self.setData({ rankings: data, loadError: false })
+      self.renderTab()
+      self.setData({ refreshing: false })
+    }).catch(function() {
+      self.setData({ refreshing: false })
+    })
   },
 
   onLoadMore() {
@@ -128,6 +135,22 @@ Page({
   },
 
   loadData() {
+    var self = this
+    if (self.data.rankings) {
+      self.renderTab()
+      return
+    }
+    self.setData({ loading: true, loadError: false })
+    dataLoader.loadRankings().then(function(data) {
+      self.setData({ rankings: data, loading: false })
+      self.renderTab()
+    }).catch(function() {
+      self.setData({ loading: false, loadError: true })
+    })
+  },
+
+  renderTab() {
+    var rankings = this.data.rankings || {}
     var tabKey = this.data.tabKeys[this.data.activeMainTab]
     var items = rankings[tabKey] || []
 

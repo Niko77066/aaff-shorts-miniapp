@@ -4,3 +4,7 @@ project.private.config.json
 .DS_Store
 videos/
 covers/
+images/covers/
+_upload-sigv4.py
+__pycache__/
+*.pyc

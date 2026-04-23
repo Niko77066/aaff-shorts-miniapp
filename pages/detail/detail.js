@@ -1,4 +1,4 @@
-const rankings = require('../../data/rankings.js')
+const dataLoader = require('../../utils/data-loader.js')
 
 /* Color palette for related items */
 var RELATED_GRADIENTS = [
@@ -23,10 +23,10 @@ function formatDuration(seconds) {
 }
 
 /* Find an item by slug across all rankings */
-function findBySlug(slug) {
-  var keys = Object.keys(rankings)
+function findBySlugIn(rankings, slug) {
+  var keys = Object.keys(rankings || {})
   for (var k = 0; k < keys.length; k++) {
-    var list = rankings[keys[k]]
+    var list = rankings[keys[k]] || []
     for (var i = 0; i < list.length; i++) {
       if (list[i].slug === slug) {
         return { item: list[i], listName: keys[k], rank: list[i].rank }
@@ -39,16 +39,24 @@ function findBySlug(slug) {
 Page({
   data: {
     info: {},
-    relatedItems: []
+    relatedItems: [],
+    isPlaying: false
   },
 
   onLoad(options) {
     var slug = options.id || ''
-    this.loadDetail(slug)
+    var self = this
+    dataLoader.loadRankings().then(function(rankings) {
+      self._rankings = rankings
+      self.loadDetail(slug)
+    }).catch(function() {
+      wx.showToast({ title: '加载失败，请重试', icon: 'none' })
+    })
   },
 
   loadDetail(slug) {
-    var result = findBySlug(slug)
+    var rankings = this._rankings || {}
+    var result = findBySlugIn(rankings, slug)
     if (!result) {
       wx.showToast({ title: '未找到该作品', icon: 'none' })
       return
@@ -124,16 +132,19 @@ Page({
     }
   },
   onPlay() {
-    if (this.data.info.sourceUrl) {
-      wx.setClipboardData({
-        data: this.data.info.sourceUrl,
-        success: function() {
-          wx.showToast({ title: '链接已复制', icon: 'success' })
-        }
-      })
-    } else {
-      wx.showToast({ title: '播放功能开发中', icon: 'none' })
+    if (!this.data.info.video) {
+      wx.showToast({ title: '视频源缺失', icon: 'none' })
+      return
     }
+    this.setData({ isPlaying: true })
+  },
+  onVideoPlay() {
+    // placeholder for analytics hook
+  },
+  onVideoError(e) {
+    console.warn('[detail] video error', e && e.detail)
+    wx.showToast({ title: '视频加载失败', icon: 'none' })
+    this.setData({ isPlaying: false })
   },
   onShareAppMessage() {
     return {
