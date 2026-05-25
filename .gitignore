@@ -8,3 +8,9 @@ images/covers/
 _upload-sigv4.py
 __pycache__/
 *.pyc
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+*token*.json
+*vertex-sa*.json
